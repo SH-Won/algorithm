@@ -1,6 +1,5 @@
 
 let arr = [8,2,3,1,5,7];
-
 function InsertionSort(arr){
 
     let i=1,j,temp;
