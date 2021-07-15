@@ -1,9 +1,6 @@
-// const fs = require('fs');
-// const [N,...arr] = fs.readFileSync('/dev/stdin').toString().split('\n').map(num => parseInt(num));
-
-
-
-let arr = [-4000,-3998,-3,1,4,2,5,-2,7];
+const fs = require('fs');
+const [N,...arr] = fs.readFileSync('/dev/stdin').toString().split('\n').map(num => parseInt(num));
+// let arr = [-4000,-3998,-3,1,4,2,5,-2,7];
 const sortArr = countingSort(arr);
 const average = averageResult(sortArr);
 const middleNumber = sortArr[Math.floor( sortArr.length / 2 )];

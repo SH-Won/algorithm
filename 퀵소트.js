@@ -1,6 +1,6 @@
-console.time('bubble');
-// let arr = [2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50
-//     ,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50,2,20,4,5,7,11,90,1,80,3,15,6,8,10,50];
+// const fs = require('fs');
+// const [N,...arr] = fs.readFileSync('/dev/stdin').toString().split('\n').map(num => parseInt(num));
+console.time('quick');
 const arr = [10, 5, 2, 0, 3, 1, 4, 2, 3, 5, 1, 7,
     10, 5, 2, 0, 3, 1, 4, 2, 3, 5, 1, 7,
     10, 5, 2, 0, 3, 1, 4, 2, 3, 5, 1, 7,
@@ -112,21 +112,37 @@ const arr = [10, 5, 2, 0, 3, 1, 4, 2, 3, 5, 1, 7,
     10, 5, 2, 0, 3, 1, 4, 2, 3, 5, 1, 7,
     10, 5, 2, 0, 3, 1, 4, 2, 3, 5, 1, 7];
 
-function bubbleSort(arr){
-    let i,j,temp;
+function quickSort(arr){
+    return sort(arr,0,arr.length-1);
+}
+function sort(arr,left,right){
+    if(arr.length < 2) return arr;
 
-    for(i=0; i<arr.length-1; i++){
-        for(j=0; j<arr.length-1-i; j++){
-            if(arr[j] > arr[j+1]){
-                temp = arr[j+1];
-                arr[j+1]=arr[j];
-                arr[j]=temp;
-            }
-        }
-    }
+    const index = partition(arr,left,right);
+    if(left < index-1) sort(arr,left,index-1)
+    if(right > index) sort(arr,index,right)
 
     return arr;
 }
-console.log(bubbleSort(arr));
-console.log(arr[arr.length -1]);
-console.timeEnd('bubble');
+function partition(arr,left,right){
+    const mid = Math.floor((left+right) / 2);
+    const pivot = arr[mid];
+
+    while(left <= right){
+        while(arr[left] < pivot) left++;
+        while(arr[right] > pivot) right--;
+
+        if(left <=right){
+            swap(arr,left,right);
+            left++;
+            right--;
+        }
+    }
+    return left;
+
+}
+function swap(arr,left,right){
+    return [arr[left],arr[right]] = [arr[right],arr[left]]
+}
+console.log(quickSort(arr).join('\n'));
+console.timeEnd('quick');

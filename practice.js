@@ -81,3 +81,23 @@ console.log(result);
 
 // console.log(result);
 // console.timeEnd('quick');
+
+const M=2;
+const N=4;
+let result ='';
+let output= [];
+
+function dfs(cnt){
+    if(cnt ===M) {
+        result +=`${output.join(' ')}\n`;
+        return;
+    }
+    for(let i =0; i<N; i++){
+        if(visited[i] === true) continue;
+        visited[i]=true;
+        output.push(i+1);
+        dfs(cnt+1);
+        output.pop();
+        visitied[i]=false;  
+    }
+}
