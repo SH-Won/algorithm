@@ -1,6 +1,5 @@
-// const fs = require('fs');
-// const [N,M] = fs.readFileSync('/dev/stdin').toString().split(' ').map(num=> parseInt(num));
-const [N,M]=[4,3];
+const fs = require('fs');
+const [N,M] = fs.readFileSync('/dev/stdin').toString().split(' ').map(num=> parseInt(num));
 let result ='';
 let output =[];
 let visited = Array(N);

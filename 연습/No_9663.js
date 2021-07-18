@@ -1,7 +1,7 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim();
-// const N = +input;
-const N = 8;
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim();
+const N = +input;
+
 let count = 0;
 let queen = Array(N).fill(0);
 dfs(0);

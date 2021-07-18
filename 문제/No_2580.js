@@ -25,8 +25,6 @@ dfs(0,emptyArray,arr);
 
 function dfs(cnt,emptyArray,arr){
     
-    
-    
     if(cnt === emptyArray.length){
         let solution =''
         // for(let i=0; i<arr.length; i++){

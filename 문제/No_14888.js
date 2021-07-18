@@ -1,10 +1,10 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input =[
-    '6',
-    '1 2 3 4 5 6',
-    '2 1 1 1'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '6',
+//     '1 2 3 4 5 6',
+//     '2 1 1 1'
+// ]
 const N = +input[0];
 const number = input[1].split(' ').map(num => parseInt(num));
 const [PLUS,MINUS,MULTI,DIV]=[0,1,2,3];
