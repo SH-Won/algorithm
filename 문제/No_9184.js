@@ -1,13 +1,13 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input = [
-    '1 1 1',
-    '2 2 2',
-    '10 4 6',
-    '50 50 50',
-    '-1 7 18',
-    '-1 -1 -1'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '1 1 1',
+//     '2 2 2',
+//     '10 4 6',
+//     '50 50 50',
+//     '-1 7 18',
+//     '-1 -1 -1'
+// ]
 let arr =[];
 for(let i=0; i<input.length; i++){
    arr.push(input[i].split(' ').map(num => +num));

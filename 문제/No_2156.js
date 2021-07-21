@@ -1,9 +1,9 @@
-// const fs = require('fs');
-// const [N,...numbers] = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(num => +num);
+const fs = require('fs');
+const [N,...numbers] = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(num => +num);
 // const a = [6,10,13,9,8,1];
 // const [N,...arr]=[6,0,0,0,...a];
 // N= 1 2 3 일때를 생각해야함
-const [N,...numbers] = [6,6,10,13,9,8,1];
+// const [N,...numbers] = [6,6,10,13,9,8,1];
 const arr = [0,0,0,...numbers];
 let dp=Array(N+3).fill(0);
 

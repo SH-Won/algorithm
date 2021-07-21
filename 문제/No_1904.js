@@ -1,6 +1,6 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim();
-const input = 4;
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim();
+
 const N = input;
 
 let dp =[];

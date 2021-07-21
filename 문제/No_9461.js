@@ -1,6 +1,6 @@
-// const fs = require('fs');
-// const [N,...arr] = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(num => +num);
-const [N,...arr]=[2,6,12];
+const fs = require('fs');
+const [N,...arr] = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(num => +num);
+//const [N,...arr]=[2,6,12];
 
 let dp=[]
 dp[1]=1;

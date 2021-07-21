@@ -1,11 +1,11 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input = [
-    '3',
-    '26 40 83',
-    '49 60 57',
-    '13 89 99'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '3',
+//     '26 40 83',
+//     '49 60 57',
+//     '13 89 99'
+// ]
 const N = +input[0];
 
 let arr = new Array(N);

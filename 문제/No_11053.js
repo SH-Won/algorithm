@@ -1,10 +1,10 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-// const N = +input[0];
-// const arr= input[1].split(' ').map(num=> +num);
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const N = +input[0];
+const arr= input[1].split(' ').map(num=> +num);
 
 
-const [N,...arr]=[6,10,20,10,30,20,50];
+// const [N,...arr]=[6,10,20,10,30,20,50];
 
 const dp = arr.reduce((acc,cur,index,array)=>{
     let temp =[];
@@ -19,5 +19,5 @@ const dp = arr.reduce((acc,cur,index,array)=>{
     return acc;
 },Array(arr.length).fill(1))
 
-console.log(dp);
+// console.log(dp);
 console.log(Math.max(...dp));
