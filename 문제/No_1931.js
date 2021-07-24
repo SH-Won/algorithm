@@ -1,11 +1,11 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const input =[
-    '11',
-    '1 4','3 5','0 6','5 7','3 8','5 9',
-    '6 10','8 11','8 12','2 13','12 14'
-]
+// const input =[
+//     '11',
+//     '1 4','3 5','0 6','5 7','3 8','5 9',
+//     '6 10','8 11','8 12','2 13','12 14'
+// ]
 const N = +input[0];
 let arr = Array.from({length:N},(_,i) => input[i+1].split(' ').map(num => +num));
 
@@ -17,7 +17,7 @@ arr.sort((a,b)=>{
         a[1] - b[1];
     }
 });
-console.log(arr);
+//console.log(arr);
 let count =1;
 let temp = arr[0][1];
 
