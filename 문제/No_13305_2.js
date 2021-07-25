@@ -18,4 +18,4 @@ for(let i=0; i<N-1; i++){
     allCost += currentPrice * distance[i];
     if(currentPrice > oilPrice[i+1]) currentPrice = oilPrice[i+1];
 }
-console.log(allCost);
+console.log(String(allCost));

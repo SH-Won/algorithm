@@ -1,11 +1,11 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const input = [
-    '7',
-    '2 3 1 2 3 4',
-    '5 2 4 6 1 7 5',
-]
+// const input = [
+//     '7',
+//     '2 3 1 2 3 4',
+//     '5 2 4 6 1 7 5',
+// ]
 // 10 + 12 + 7 = 29;
 const N = +input[0];
 const distance = input[1].split(' ').map(num => +num);

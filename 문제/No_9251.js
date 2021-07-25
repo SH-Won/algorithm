@@ -1,8 +1,8 @@
-// const fs = require('fs');
-// const [string1,string2] =fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const [string1,string2] =fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-let string1 = 'ACAYKP';
-let string2 = 'CAPCAK';
+// let string1 = 'ACAYKP';
+// let string2 = 'CAPCAK';
 let dp = Array.from({length: string1.length +1 }, v =>Array(string2.length+1).fill(0));
 
 for(let i=1; i<=string1.length; i++){
