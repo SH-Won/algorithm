@@ -1,13 +1,13 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim();
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim();
 
-const input ='2';
+// const input ='2';
 const N = +input;
 
 // 몇 계단 수가 i 인것
 // 끝 자리 수가 j 인것
 let dp =Array.from({length:N+1},()=> Array(11).fill(0));
-console.log(dp);
+
 let result ;
 for(let i=1; i<=9; i++){
     dp[1][i] =1;

@@ -1,9 +1,9 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input = [
-    '6',
-    '10 20 10 30 20 50'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '6',
+//     '10 20 10 30 20 50'
+// ]
 const N = +input[0];
 const arr = input[1].split(' ').map(num => +num);
 let dp = arr.reduce((acc,cur,index,array)=>{

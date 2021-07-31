@@ -1,7 +1,7 @@
-// const fs =require('fs');
-// const [N,...arr]=fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(num=>+num);
+const fs =require('fs');
+const [N,...arr]=fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(num=>+num);
 
-const [N,...arr]=[6,10,20,15,25,10,20]
+// const [N,...arr]=[6,10,20,15,25,10,20]
 let dp = Array(N+2);
 dp[0] = arr[0];
 dp[1] = Math.max(arr[0]+arr[1],arr[1]);

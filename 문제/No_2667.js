@@ -1,16 +1,16 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const input =[
-    '7',
-    '0110100',
-    '0110101',
-    '1110101',
-    '0000111',
-    '0100000',
-    '0111110',
-    '0111000'
-]
+// const input =[
+//     '7',
+//     '0110100',
+//     '0110101',
+//     '1110101',
+//     '0000111',
+//     '0100000',
+//     '0111110',
+//     '0111000'
+// ]
 const N = +input[0]
 const X = [1,-1,0,0];
 const Y = [0,0,1,-1];
@@ -29,7 +29,7 @@ for(let i=0; i<N; i++){
         homeCount=0;
         }
  
-        
+
    }
 }
 homeGroup.sort((a,b)=> a-b);
