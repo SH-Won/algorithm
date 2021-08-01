@@ -20,8 +20,8 @@ while(T--){
     
     let isBipartite =true;
     for(let i=1; i<=V; i++){
-        if(visited[i] ===0){
-          bfs(i);
+        if(visited[i] === 0){
+            bfs(i);
         }
         
     }
