@@ -1,6 +1,6 @@
-// const fs = require('fs');
-// const [N,K] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num => +num);
-const [N,K] = [5,100000];
+const fs = require('fs');
+const [N,K] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num => +num);
+//const [N,K] = [5,100000];
 let position ={
 
 }

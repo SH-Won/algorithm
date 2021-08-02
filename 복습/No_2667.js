@@ -1,15 +1,15 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input =[
-    '7',
-    '0110100',
-    '0110101',
-    '1110101',
-    '0000111',
-    '0100000',
-    '0111110',
-    '0111000'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '7',
+//     '0110100',
+//     '0110101',
+//     '1110101',
+//     '0000111',
+//     '0100000',
+//     '0111110',
+//     '0111000'
+// ]
 
 const N = +input[0];
 let apartment = Array.from({length:N},(_,i)=>input[i+1].split('').map(num =>+num));

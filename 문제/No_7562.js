@@ -1,8 +1,8 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input =[
-    '3','8','0 0','7 0','100','0 0','30 50','10','1 1','1 1'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '3','8','0 0','7 0','100','0 0','30 50','10','1 1','1 1'
+// ]
 
 let inputIndex = 0;
 let T = +input[inputIndex++];
