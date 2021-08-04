@@ -1,13 +1,13 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input =[
-    '5 5',
-    'WBWWW',
-    'WWWWW',
-    'BBBBB',
-    'BBBWW',
-    'WWWWW'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '5 5',
+//     'WBWWW',
+//     'WWWWW',
+//     'BBBBB',
+//     'BBBWW',
+//     'WWWWW'
+// ]
 const [column,row]=input[0].split(' ').map(num=>+num);
 let battleField = Array.from({length:row},(_,i)=>input[i+1].split(''));
 

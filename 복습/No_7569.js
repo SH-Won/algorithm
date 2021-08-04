@@ -1,14 +1,14 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input = [
-    '5 3 2',
-    '0 0 0 0 0',
-    '0 0 0 0 0',
-    '0 0 0 0 0',
-    '0 0 0 0 0',
-    '0 0 1 0 0',
-    '0 0 0 0 0'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '5 3 2',
+//     '0 0 0 0 0',
+//     '0 0 0 0 0',
+//     '0 0 0 0 0',
+//     '0 0 0 0 0',
+//     '0 0 1 0 0',
+//     '0 0 0 0 0'
+// ]
 let inputIndex =0;
 const [column,row,depth]=stringToNumberArr(input[inputIndex++]);
 let tomatoBox = Array.from({length:depth},()=>Array.from({length:row},()=>stringToNumberArr(input[inputIndex++])));

@@ -1,13 +1,13 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const input =[
-    '4 6',
-    '110110',
-    '110110',
-    '111111',
-    '111101'
-]
+// const input =[
+//     '4 6',
+//     '110110',
+//     '110110',
+//     '111111',
+//     '111101'
+// ]
 const [N,M] = input[0].split(' ').map(num => +num);
 let maze = Array.from({length:N},(_,i)=>input[i+1].split('').map(num=>+num));
 
