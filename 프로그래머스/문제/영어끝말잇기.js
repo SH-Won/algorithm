@@ -1,0 +1,23 @@
+//let array = ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]
+let array = ["hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"]
+console.log(solution(3,array))
+function solution(n,words){
+    let answer =[0,0];
+    let array = [];
+    for(let i=1; i<words.length; i++){
+        const [pre,cur] = [words[i-1],words[i]];
+        array.push(pre);
+        
+        const isExist = array.indexOf(words[i]);
+        
+        if(pre[pre.length-1] !== cur[0] || isExist !== -1){
+            let person = (i % n) + 1;
+            let round = Math.floor(( i / n)) +1
+            answer =[person,round];
+            break;
+        }
+        
+    }
+
+    return answer;
+}
