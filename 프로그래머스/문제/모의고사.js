@@ -16,10 +16,10 @@ function solution(answers){
             score[0]++;
         }
         if(ans === answerArr[1][index % 8]){
-            score[1]+=1;
+            score[1]++;
         }
         if(ans === answerArr[2][index % 10]){
-            score[2]+=1;
+            score[2]++;
         }
     })
     console.log(score);

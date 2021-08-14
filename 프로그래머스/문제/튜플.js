@@ -9,7 +9,6 @@ const tupleForm = (str) =>
     .sort((a,b)=>a.length - b.length)
     .reduce((acc,cur) =>{
         return [...acc,...cur.filter(el => !acc.includes(el))];
-        
     },[])
 
 const stringToNumArr = (array) =>
