@@ -38,7 +38,7 @@ function solution2(n){
     }
     for(let i=1; i<=Math.floor(n/2); i++){
         
-        isContinuous(i,0) ? answer++ : answer;
+        if(isContinuous(i,0)) answer++;
     }
     return answer+1;
 }

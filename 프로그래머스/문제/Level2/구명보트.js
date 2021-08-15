@@ -4,7 +4,7 @@ function solution(people,limit){
 
     let answer = 0;
     people.sort((a,b)=>b-a);
-    console.log(people);
+    
     let left = 0;
     let right = people.length-1;
     //[80 70 50 50]

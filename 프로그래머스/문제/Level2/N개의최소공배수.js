@@ -20,7 +20,7 @@ const gcf = (a,b)=>{
     if(mod === 0){
         return b;
     }
-    return (b,mod);
+    return gcf(b,mod);
 }
 const lcm = (a,b) =>{
 
