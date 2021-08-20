@@ -1,5 +1,5 @@
-// console.log(solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"],[2,3,4]))
-console.log(solution(["XYZ", "XWY", "WXA"],[2,3,4]))
+ console.log(solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"],[2,3,4]))
+//console.log(solution(["XYZ", "XWY", "WXA"],[2,3,4]))
 function solution(orders,course){
     let orderMap = new Map(); // {'AB': 2}
     let maxCountMap = new Map(); //{2 : 3}
@@ -28,6 +28,7 @@ function solution(orders,course){
         let str = orders[i].split('').sort().join('');
         combination("",0,str);
     }
+    console.log(orderMap)
     console.log(maxCountMap)
     answer= course.map(length =>{
           const maxCount = maxCountMap.get(length);
