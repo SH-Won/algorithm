@@ -42,6 +42,7 @@ for(let i=0; i<Number(N); i++){
 console.log(answer.trim());
 
 let string = '[ first in ] ( first out ).'
+string.replace(/[a-z]|[\s]|[\.]/g,'')
 
-console.log(string.replace(/[a-z]|[\s]|[\.]/g,''))
+console.log(string)
 console.log(string.replace(/[^\[|^\]|^\{|^\}|^\(|^\)]/g,""))
