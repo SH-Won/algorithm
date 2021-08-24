@@ -1,27 +1,27 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().split('\n');
-// let [N,...arr]=input;
-let [N,...arr]=[
-'14'
-,'push 1'
-,'push 2'
-,'top'
-,'size'
-,'empty'
-,'pop'
-,'pop'
-,'pop'
-,'size'
-,'empty'
-,'pop'
-,'push 3'
-,'empty'
-,'top'
-]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().split('\n');
+let [N,...arr]=input;
+// let [N,...arr]=[
+// '14'
+// ,'push 1'
+// ,'push 2'
+// ,'top'
+// ,'size'
+// ,'empty'
+// ,'pop'
+// ,'pop'
+// ,'pop'
+// ,'size'
+// ,'empty'
+// ,'pop'
+// ,'push 3'
+// ,'empty'
+// ,'top'
+// ]
 let inputIndex = 0;
 let stack = []
 let str = '';
-console.log(arr)
+
 while(inputIndex < Number(N)){
     const order = arr[inputIndex++].split(' ');
 

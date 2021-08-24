@@ -43,7 +43,7 @@ function solution(orders,course){
         return result;
     })
 
-    console.log(answer);
+   // console.log(answer);
     
     return answer.reduce((acc,cur)=>{
         return [...acc,...cur]

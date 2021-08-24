@@ -25,7 +25,7 @@ function solution(n, lost, reserve) {
             }
         }
     })
-    console.log(outfit);
+    
 
    
    answer = outfit.filter(num => num >=1).length;

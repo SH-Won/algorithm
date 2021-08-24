@@ -40,7 +40,7 @@ const checkCovid = (places,place) =>{
     return places
 }
 
-console.log(solution(places));
+//console.log(solution(places));
 
 
 function solution(places){

@@ -6,7 +6,7 @@ let stack = [];
 
 while(i < N){
     if(arr[i] !==0 ){
-        stack.push(input[i])
+        stack.push(arr[i])
     }
     else{
         stack.pop();

@@ -1,5 +1,5 @@
 function solution(n, m) {
-    let answer = [];
+    let answer = [gcf(n,m),lcm(n,m)];
 
     function gcf(n,m){
         while(m>0){
@@ -12,7 +12,6 @@ function solution(n, m) {
     }
     function lcm(n,m){
         return (n*m) / gcf(n,m);
-
     }
     return answer;
 }

@@ -3,21 +3,21 @@
 //              [0,0,0,0,0,0,0,0],]
 // console.log(array.every(row => row.some(number => number === !array[0][0]) ===false))
 
-const input = [
-'0 0 0 1 1 1 -1 -1 -1',
-'0 0 0 1 1 1 -1 -1 -1',
-'0 0 0 1 1 1 -1 -1 -1',
-'1 1 1 0 0 0 0 0 0',
-'1 1 1 0 0 0 0 0 0',
-'1 1 1 0 0 0 0 0 0',
-'0 1 -1 0 1 -1 0 1 -1',
-'0 -1 1 0 1 -1 0 1 -1',
-'0 1 -1 1 0 -1 0 1 -1',
+// const input = [
+// '0 0 0 1 1 1 -1 -1 -1',
+// '0 0 0 1 1 1 -1 -1 -1',
+// '0 0 0 1 1 1 -1 -1 -1',
+// '1 1 1 0 0 0 0 0 0',
+// '1 1 1 0 0 0 0 0 0',
+// '1 1 1 0 0 0 0 0 0',
+// '0 1 -1 0 1 -1 0 1 -1',
+// '0 -1 1 0 1 -1 0 1 -1',
+// '0 1 -1 1 0 -1 0 1 -1',
 
-]
+// ]
 
-// const fs = require('fs');
-// const [N,...input] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const [N,...input] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const matrix = input.map(row => row.split(' ').map(num => +num));
 

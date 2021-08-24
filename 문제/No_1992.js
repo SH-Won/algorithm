@@ -1,17 +1,17 @@
-// const fs = require('fs');
-// const [N,...quadMatrix] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const [N,...quadMatrix] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
-const quadMatrix = [
-    '11110000',
-'11110000',
-'00011100',
-'00011100',
-'11110000',
-'11110000',
-'11110011',
-'11110011',
+// const quadMatrix = [
+//     '11110000',
+// '11110000',
+// '00011100',
+// '00011100',
+// '11110000',
+// '11110000',
+// '11110011',
+// '11110011',
 
-]
+// ]
 
 
 const quad = (matrix) =>{
