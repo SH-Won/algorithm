@@ -53,3 +53,14 @@
 
 // }
 // console.log(count);
+
+function re(){
+
+for(let i=0; i<10 ;i++){
+    if(i ===11) return i;
+    console.log(i);
+}
+return -1;
+}
+
+console.log(re())
