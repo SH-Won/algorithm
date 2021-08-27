@@ -54,13 +54,8 @@
 // }
 // console.log(count);
 
-function re(){
-
-for(let i=0; i<10 ;i++){
-    if(i ===11) return i;
+let i=10;
+while(i--){
     console.log(i);
+    if(i ===5) break;
 }
-return -1;
-}
-
-console.log(re())
