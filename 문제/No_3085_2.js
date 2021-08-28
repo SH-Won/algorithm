@@ -1,8 +1,8 @@
 //const input = ['3','CCP','CCP','PPC'];
 // const input =['4','PPPP','CYZY','CCPY','PPCC']
-const input =['5','YCPZY','CYZZP','CCPPP','YCYZC','CPPZZ']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const input =['5','YCPZY','CYZZP','CCPPP','YCYZC','CPPZZ']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const N = +input[0];
 let candy = Array.from({length:N},(_,i)=>input[i+1].split(''));

@@ -1,8 +1,8 @@
 //N번 째 감소하는수 ?
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim();
-// const N = +input;
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim();
+const N = +input;
 
 const array = ['9','8','7','6','5','4','3','2','1','0'];
 const X = [];
@@ -18,5 +18,5 @@ function dfs(curNumber,index){
     }
 }
 X.sort((a,b)=>a-b);
-//console.log(X[N] ===undefined ? -1 : X[N]);
-console.log(3 ===undefined)
+console.log(X[N] ===undefined ? -1 : X[N]);
+

@@ -1,7 +1,7 @@
 //const input = ['5 4','0 0 1 0','0 0 0 0','1 0 0 0','0 0 0 0','0 0 0 1'];
-const input = ['7 4','0 0 0 1','0 1 0 0','0 0 0 0','0 0 0 1','0 0 0 0','0 1 0 0','0 0 0 1']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const input = ['7 4','0 0 0 1','0 1 0 0','0 0 0 0','0 0 0 1','0 0 0 0','0 1 0 0','0 0 0 1']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(num=>+num);
 let shark = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(num =>+num));
 let startShark =[]

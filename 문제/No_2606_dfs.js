@@ -1,7 +1,7 @@
-const input = ['7','6','1 2','2 3','1 5','5 2','5 6','4 7'];
+//const input = ['7','6','1 2','2 3','1 5','5 2','5 6','4 7'];
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+ const fs = require('fs');
+ const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 const K = +input[1];
 const computer = Array.from({length:K},(_,i)=>input[i+2].split(' ').map(num => +num));

@@ -1,6 +1,6 @@
-const [A,B] = [2,162];
-//const fs = require('fs');
-//const [A,B] =fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num =>+num);
+//const [A,B] = [2,162];
+const fs = require('fs');
+const [A,B] =fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num =>+num);
 let answer = bfs(A);
 console.log(answer);
 
@@ -19,11 +19,11 @@ function bfs(start){
                 }
                 if(next[i] < B) queue.push([next[i],count+1])
             }
+
         }
         startIndex=endIndex;
     }
     return -1;
-
 }
 
 // function bfs(start){

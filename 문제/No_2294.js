@@ -1,7 +1,7 @@
-const input =['3 15','2','4','12']
+//const input =['3 15','2','4','12']
 //const input =['3 3','2','2','2']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const [n,k] = input[0].split(' ').map(num=>+num);
 const coinQuality = Array.from({length:n}, (_,i)=>+input[i+1])

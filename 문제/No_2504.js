@@ -1,7 +1,7 @@
-// const fs = require('fs');
-// const string = fs.readFileSync('/dev/stdin').toString().trim();
+const fs = require('fs');
+const string = fs.readFileSync('/dev/stdin').toString().trim();
 // const string ="(()[[]])([])"
-const string ="[][]((])"
+// const string ="[][]((])"
 let answer = bracketSum(string);
 console.log(answer);
 function bracketSum(string){

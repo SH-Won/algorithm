@@ -1,9 +1,9 @@
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 //const input = ['6','0 0 0 0 0 0','0 1 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0']
 //const input = ['3','0 0 0','0 0 0','0 0 0'];
-const input =['4','0 0 0 0','0 0 0 0','0 0 0 0','0 0 0 0'];
+//const input =['4','0 0 0 0','0 0 0 0','0 0 0 0','0 0 0 0'];
 const N = +input[0];
 const house = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(num =>+num));
 const [HORIZON,VERTICAL,CROSS]=[0,1,2];

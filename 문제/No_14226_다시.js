@@ -1,7 +1,7 @@
 
-const input ='6';
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim();
+//const input ='6';
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim();
 const N = +input;
 let visited = Array.from({length:1001},()=>Array(1001).fill(false));
 let answer = bfs(1);

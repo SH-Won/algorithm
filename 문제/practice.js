@@ -53,9 +53,3 @@
 
 // }
 // console.log(count);
-
-let i=10;
-while(i--){
-    console.log(i);
-    if(i ===5) break;
-}
