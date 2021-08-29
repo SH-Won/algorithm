@@ -53,3 +53,16 @@
 
 // }
 // console.log(count);
+
+let arr=[1,2,3,4,5];
+let copy = [...arr];
+const mod = (copy) =>{
+    const copyArr=[...copy];
+    copy[2] =2;
+    console.log(copyArr);
+
+   return copyArr;
+}
+const copyArr = mod(copy);
+console.log(copyArr);
+
