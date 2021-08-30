@@ -16,19 +16,19 @@
 // '0 0 0 0 0 2',
 
 // ]
-const input =[
-    '8 8',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'0 0 0 0 0 0 0 0',
-'0 0 0 0 0 0 0 0',
-'0 0 0 0 0 0 0 0',
-]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '8 8',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '0 0 0 0 0 0 0 0',
+// '0 0 0 0 0 0 0 0',
+// '0 0 0 0 0 0 0 0',
+// ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(num => +num);
 let lab = Array.from({length:N},(_,i)=>input[i+1].split(' '));
 const virusPos = [];
@@ -43,7 +43,6 @@ let maxSafety = 0;
 buildWall(0,3);
 console.log(maxSafety)
 
-
 function buildWall(index,count){
    
     if(count === 0){
@@ -53,11 +52,8 @@ function buildWall(index,count){
                  copyLab[i][j] = lab[i][j];
              }
          }
-
-        
         let newLab = spreadVirus(copyLab);
         let count = checkSafty(newLab);
-        
         maxSafety = Math.max(maxSafety,count);
         
        return;
@@ -66,17 +62,10 @@ function buildWall(index,count){
     
        for(let i=index; i<M*N; i++){
            const [y,x] = [Math.floor(i/M), i % M];
-         
            if(lab[y][x] !=='0') continue;
-           
-           lab[y][x] ='1'
-           //const nextLab = [...curLab];
-           
+           lab[y][x] ='1';
            buildWall(i+1,count-1);           
-          // console.log(lab);
-          //console.log(curLab);
-          lab[y][x] ='0';
-
+           lab[y][x] ='0';
         }
     
     function spreadVirus(checkLab){
