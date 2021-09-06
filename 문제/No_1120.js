@@ -1,6 +1,6 @@
-const [str1,str2] = ['adaabc','aababbc'];
-// const fs = require('fs');
-// const [str1,str2] = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
+//const [str1,str2] = ['adaabc','aababbc'];
+ const fs = require('fs');
+ const [str1,str2] = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
 let minCount =Infinity;
 
 for(let i=0; i<=str2.length - str1.length; i++){

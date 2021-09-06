@@ -1,6 +1,6 @@
-const input = ['5','2 1 1 1 2','1 5']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const input = ['5','2 1 1 1 2','1 5']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 const bridge = input[1].split(' ').map(num =>+num);
 const [start,end] = input[2].split(' ').map(num => +num - 1);
@@ -33,7 +33,7 @@ const bfs = (start) =>{
             }
             
         }
-        console.log(queue);
+        
     }
     return -1
 }

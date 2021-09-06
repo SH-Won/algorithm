@@ -1,7 +1,7 @@
-const input = ['5 7 3','0 2 4 4','1 1 2 5','4 0 6 2']
+//const input = ['5 7 3','0 2 4 4','1 1 2 5','4 0 6 2']
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [row,column,k] = input[0].split(' ').map(num =>+num);
 const divRange = Array.from({length:k},(_,i)=>input[i+1].split(' ').map(num =>+num));
 let map = Array.from({length:row},()=>Array(column).fill(false));

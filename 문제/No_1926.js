@@ -8,8 +8,8 @@ const input = [
     '0 0 1 1 1'
 ]
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [n,m] =input[0].split(' ').map(num => +num);
 let map = Array.from({length:n},(_,i) => input[i+1].split(' '));
 
@@ -43,7 +43,6 @@ for(let i=0; i<n; i++){
     for(let j=0; j<m; j++){
         if(map[i][j] === '1'){
             let area = bfs([i,j]);
-           
             maxArea = Math.max(area,maxArea);
             count++;
         }

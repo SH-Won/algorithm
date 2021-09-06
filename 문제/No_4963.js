@@ -26,8 +26,8 @@ const input =[
 '0 0',
 ]
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let inputIndex = 0;
 let answer ='';
 while(1){

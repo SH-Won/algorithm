@@ -2,9 +2,9 @@
 //const course =[2,3,4];
 // const orders =["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"];
 // const course = [2,3,5];
-const orders = ['XYZ','XWY','WXA'];
-const course = [2,3,4];
-console.log(solution(orders,course));
+//const orders = ['XYZ','XWY','WXA'];
+//const course = [2,3,4];
+//console.log(solution(orders,course));
 
 function solution(orders,course){
 

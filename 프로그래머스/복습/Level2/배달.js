@@ -13,18 +13,15 @@ const solution = (N,road,K) =>{
         vTree[cVilage].push({nVilage,distance});
         vTree[nVilage].push({nVilage:cVilage,distance});
     }
-    console.log(vTree);
+  
      
     const bfs = (start) =>{
         let queue = [[start,0]];
         vDist[start] = 0;
         
-        
-
         while(queue.length){
             const [cVilage,cDist] = queue.pop();
-       
-            
+
             for(let i=0; i<vTree[cVilage].length; i++){
                 const {nVilage,distance} =vTree[cVilage][i];
                 if(vDist[nVilage] > cDist+distance){
@@ -33,7 +30,6 @@ const solution = (N,road,K) =>{
                 }
             }
         }
-
     }
     bfs(1);
     return vDist.filter(num => num <=K).length;

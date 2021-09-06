@@ -1,7 +1,7 @@
 //const [str1,str2] = ["FRANCE","french"];
 // const [str1,str2] =["handshake","shake hands"]
 // const [str1,str2] = ["E=M*C^2","e=m*c^2"];
-const [str1,str2] =["aa1+aa2","AAAA12"];
+// const [str1,str2] =["aa1+aa2","AAAA12"];
 const getGroupStr = (string) =>{
     let groupArr = [];
     for(let i=0; i<string.length-1; i++){
@@ -36,4 +36,3 @@ const J = (str1,str2) =>{
 const solution = (str1,str2) =>{
     return J(str1,str2);
 }
-console.log(solution(str1,str2));

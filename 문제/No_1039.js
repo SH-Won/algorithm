@@ -1,6 +1,6 @@
-const [N,K] = [300,2];
-//const fs = require('fs');
-//const [N,K] =fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num =>+num);
+//const [N,K] = [300,2];
+const fs = require('fs');
+const [N,K] =fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num =>+num);
 
 const bfs = (N,K) =>{
     if(N <=10) return -1

@@ -5,13 +5,13 @@
 // '30 30 25 17 28',
 // '27 24 22 15 10',
 // ]
-// const input =[
-//     '4 4',
-//     '16 9 8 1',
-//     '15 10 7 2',
-//     '14 11 6 3',
-//     '13 12 5 4'
-// ]
+const input =[
+    '4 4',
+    '16 9 8 1',
+    '15 10 7 2',
+    '14 11 6 3',
+    '13 12 5 4'
+]
 
 //const fs = require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');

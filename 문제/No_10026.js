@@ -7,8 +7,8 @@ const input =[
     'BBRRR',
     'RRRRR']
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 const paint = Array.from({length:N},(_,i)=>input[i+1].split(''));
 let visited = Array.from({length:N},()=>Array(N).fill(false))

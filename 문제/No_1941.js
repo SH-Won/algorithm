@@ -1,8 +1,8 @@
 //const student = ['YYYYY','SYSYS','YYYYY','YSYYS','YYYYY'];
 //const student = ['SSSSY','YYYYY','YYYYY','YYYYY','YYYYY'];
-const student = ['SSSSS','SSSSS','SSSSS','SSSSS','SSSSS'];
-//const fs = require('fs');
-//const student = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const student = ['SSSSS','SSSSS','SSSSS','SSSSS','SSSSS'];
+const fs = require('fs');
+const student = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let visited = Array.from({length:student.length},()=>Array(student.length).fill(false));
 
 let reputedSeven = 0;
