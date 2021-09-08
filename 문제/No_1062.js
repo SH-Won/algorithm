@@ -4,7 +4,7 @@
 //const input =['2 5','antatica','antaatica'];
 //const fs= require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-//const input =['5 6','antaatica','antabxbtica','antabbbbtica','antaccvtica','antabxbxbtica'];
+const input =['5 6','antaatica','antabxbtica','antabbbbtica','antaccvtica','antabxbxbtica'];
 
 // const array = ['abc','abcdef','abcgi'];
 // let map = new Set;
@@ -17,8 +17,8 @@
 
 // console.log(alpha[2].charCodeAt()-'a'.charCodeAt())
 
-const fs= require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const fs= require('fs');
+//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,K] = input[0].split(' ').map(num => +num);
 const words = Array.from({length:N},(_,i)=>input[i+1].replace(/[antic]/g,""))
 const teachableNumber = K - 5;

@@ -1,4 +1,4 @@
-const input =['1 1 4','1','1 1 1'];
+//const input =['1 1 4','1','1 1 1'];
 //const input =['5 2 1','2 3 2 3 2','2 3 2 3 2','2 3 2 3 2','2 3 2 3 2','2 3 2 3 2','2 1 3','3 2 3']
 // const input =[
 //     '5 2 2',
@@ -40,8 +40,8 @@ const input =['1 1 4','1','1 1 1'];
 // '2 1 3',
 // '3 2 3',
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let index=0;
 const [N,M,K] = input[index++].split(' ').map(num =>+num);
 const nutrients = Array.from({length:N},()=>input[index++].split(' ').map(num => +num));
@@ -58,7 +58,7 @@ for(let i=0; i<M; i++){
 const treeFinance = (treeInfo,curNutrients,K) =>{
      const distance = [[1,0],[-1,0],[0,1],[0,-1],[-1,-1],[-1,1],[1,-1],[1,1]];
      const isValidPos =(y,x)=>(y>=0 && x>=0 && y<N && x<N);
-     let bredTree = Array.from({length:N},()=>Array.from({length:N},()=>[]));
+     //let bredTree = Array.from({length:N},()=>Array.from({length:N},()=>[]));
     //봄에는 나무가 자신의 나이만큼 양분을 먹고 나이 +1 증가한다.
      const breed = () =>{
          for(let cy=0; cy<N; cy++){
@@ -86,7 +86,9 @@ const treeFinance = (treeInfo,curNutrients,K) =>{
              }
          }
      }
+     //1년마다
      while(K--){
+         //봄,여름
          for(let cy=0; cy<N; cy++){
              for(let cx=0; cx<N; cx++){
                  if(treeInfo[cy][cx].length !==0){
@@ -111,7 +113,9 @@ const treeFinance = (treeInfo,curNutrients,K) =>{
 
              }
          }
+         //가을
          breed();
+         //겨울
          addNutrients();
      }
      let sum = treeInfo.reduce((acc,cur)=>{
