@@ -1,8 +1,8 @@
-//const input =['5','1 3 2 -1','2 4 4 -1','3 1 2 4 3 -1','4 2 4 3 3 5 6 -1','5 4 6 -1']
+const input =['5','1 3 2 -1','2 4 4 -1','3 1 2 4 3 -1','4 2 4 3 3 5 6 -1','5 4 6 -1']
 // 어느 한 정점을 정해서 거기서 더이상 갈수 없는 정점까지의
 // 최대 거리를 구한다. 그리고 그 정점에서 다시 최대로 갈수 있는 거리를 구한다.
-const fs =require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const fs =require('fs');
+//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const V = +input[0];
 let tree = Array.from({length:V+1},()=>[]);
 
@@ -17,6 +17,7 @@ for(let i=1; i<=V; i++){
         j+=2;
     }
 }
+console.log(tree);
 
 const bfs = (start) =>{
     let visited = Array(V+1).fill(false);
