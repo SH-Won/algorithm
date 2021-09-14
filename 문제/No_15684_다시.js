@@ -1,12 +1,12 @@
 //const input = ['2 0 3'];
-const input = ['2 1 3','1 1'];
+//const input = ['2 1 3','1 1'];
 //const input = ['5 5 6','1 1','3 2','2 3','5 1','5 4'];
 //const input = ['6 5 6','1 1','3 2','1 3','2 5','5 5'];
 //const input = ['5 8 6','1 1','2 2','3 3','4 4','3 1','4 2','5 3','6 4'];
 //const input = ['5 12 6','1 1','1 3','2 2','2 4','3 1','3 3','4 2','4 4','5 1','5 3','6 2','6 4'];
 //const input = ['5 6 6','1 1','3 1','5 2','4 3','2 3','1 4'];
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M,H] = input[0].split(' ').map(num =>+num);
 let ladder = Array.from({length:H+2},()=>Array(N+1).fill(0));
 
