@@ -1,4 +1,4 @@
-//const input =['7 8 1','0 0 0 0 0 0 0 9','0 0 0 0 3 0 0 8','-1 0 5 0 0 0 22 0','-1 8 0 0 0 0 0 0','0 0 0 0 0 10 43 0','0 0 5 0 15 0 0 0','0 0 40 0 0 0 20 0',]
+const input =['7 8 1','0 0 0 0 0 0 0 9','0 0 0 0 3 0 0 8','-1 0 5 0 0 0 22 0','-1 8 0 0 0 0 0 0','0 0 0 0 0 10 43 0','0 0 5 0 15 0 0 0','0 0 40 0 0 0 20 0',]
 // const input =[
 //     '7 8 2',
 // '0 0 0 0 0 0 0 9',
@@ -69,8 +69,8 @@
 // '0 0 5 0 15 0 0 0',
 // '0 0 40 0 0 0 20 0'
 // ]
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const fs = require('fs');
+//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [R,C,T] = input[0].split(' ').map(num =>+num);
 const room = Array.from({length:R},(_,i)=>input[i+1].split(' ').map(num =>+num));
 
@@ -154,6 +154,7 @@ const clean = (room,T) =>{
         }
          work();
          // copyRoom 을 원래 room 으로 복사하고 다시 반복
+         console.log(copyRoom);
          room = copyRoom.map(array => [...array]);
          copyRoom = copyRoom.map(array => array.fill(0));
 
