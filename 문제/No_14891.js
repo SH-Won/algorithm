@@ -44,8 +44,8 @@
 // '3 -1',
 // '4 -1'
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let index = 0;
 const gear =Array.from({length:5},(_,i)=>{ 
      if(i===0) return null

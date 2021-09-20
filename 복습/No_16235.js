@@ -40,8 +40,8 @@
 // '2 1 3',
 // '3 2 3',
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let index = 0;
 const [N,M,K] = input[index++].split(' ').map(num =>+num);
 const nutrients = Array.from({length:N},()=>input[index++].split(' ').map(num =>+num));

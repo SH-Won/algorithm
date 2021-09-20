@@ -31,4 +31,3 @@ const bfs = (start) =>{
 }
 const answer = bfs(bfs(1).node).distance;
 console.log(answer);
-console.log(0 >null)

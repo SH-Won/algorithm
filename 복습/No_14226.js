@@ -1,6 +1,6 @@
-const S ='18';
-//const fs = require('fs');
-//const S = fs.readFileSync('/dev/stdin').toString().trim();
+//const S ='18';
+const fs = require('fs');
+const S = fs.readFileSync('/dev/stdin').toString().trim();
 let status = Array.from({length:1001},()=>Array(1001).fill(false));
 
 const bfs =(start) =>{

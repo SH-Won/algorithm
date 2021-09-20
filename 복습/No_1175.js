@@ -1,4 +1,4 @@
-const input =['2 3','SCC','...'];
+//const input =['2 3','SCC','...'];
 //const input =['3 5','##C##','##C##','#..S#'] //ans -1
 // const input =['7 7','C......','.......','###....','.......','#...S..','C....#.','.......'] //ans 22
 // const input =['7 8','........','#.......','###.....','........','#...S...','.....#..','....C..C'] //ans 15
@@ -6,8 +6,8 @@ const input =['2 3','SCC','...'];
 //const input =['4 8','#...S...','.....#.#','......CC','........']; //ans9
 
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(num =>+num);
 const classroom = Array.from({length:N},(_,i)=>input[i+1].split(''));
 

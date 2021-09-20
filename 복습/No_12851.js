@@ -1,6 +1,6 @@
-const [subin,sister] = [5,17];
-//const fs = require('fs');
-//const [subin,sister] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num => +num);
+//const [subin,sister] = [5,17];
+const fs = require('fs');
+const [subin,sister] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num => +num);
 
 let sec = Array(100001).fill(-1);
 let count = Array(100001).fill(0);

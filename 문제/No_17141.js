@@ -49,16 +49,16 @@
 // '0 1 0 0 0 0 0',
 // '2 1 0 0 2 0 2',
 // ]
-const input = [
-    '5 1',
-'2 2 2 1 1',
-'2 1 1 1 1',
-'2 1 1 1 1',
-'2 1 1 1 1',
-'2 2 2 1 1',
-]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '5 1',
+// '2 2 2 1 1',
+// '2 1 1 1 1',
+// '2 1 1 1 1',
+// '2 1 1 1 1',
+// '2 2 2 1 1',
+// ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(num => +num);
 const lab = Array.from({length:N},(_,i)=>input[i+1].split(' '));
 

@@ -1,8 +1,7 @@
 const [N,K] = [300,2];
 //const fs = require('fs');
 //const [N,K] =fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(num =>+num);
-console.log( typeof Math.pow(10,2));
-console.log(1);
+
 const bfs = (N,K) =>{
     if(N <=10) return -1
     // const swap = (array,one,another) =>{

@@ -26,8 +26,8 @@
 // '3 3 3 3 2 2',
 // '3 3 3 3 2 2',
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,L] = input[0].split(' ').map(num => +num);
 const map = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(num => +num));
 solution(map);

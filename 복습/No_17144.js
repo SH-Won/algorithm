@@ -59,20 +59,22 @@
 // '0 0 5 0 15 0 0 0',
 // '0 0 40 0 0 0 20 0'
 // ]
-const input =[
-    '7 8 50',
-'0 0 0 0 0 0 0 9',
-'0 0 0 0 3 0 0 8',
-'-1 0 5 0 0 0 22 0',
-'-1 8 0 0 0 0 0 0',
-'0 0 0 0 0 10 43 0',
-'0 0 5 0 15 0 0 0',
-'0 0 40 0 0 0 20 0'
-]
+// const input =[
+//     '7 8 50',
+// '0 0 0 0 0 0 0 9',
+// '0 0 0 0 3 0 0 8',
+// '-1 0 5 0 0 0 22 0',
+// '-1 8 0 0 0 0 0 0',
+// '0 0 0 0 0 10 43 0',
+// '0 0 5 0 15 0 0 0',
+// '0 0 40 0 0 0 20 0'
+// ]
 
-
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// JS class 문법을 이용해서 풀어보았다.
+// 역시나 원래 풀었던대로 하는게 훨씬 편하다.
+// 주어진 입력이 특정한 위치의 좌표나 방향 등등 이면 class 문법을 써볼 만한 것 같다
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [R,C,T] = input[0].split(' ').map(Number);
 const room = Array.from({length:R},(_,i)=>input[i+1].split(' ').map(Number));
 
