@@ -1,9 +1,9 @@
 //const input = ['6','5 2 3 4 1 2','2 2 4','4 1 3 6 5','2 4 2','2 1 3','1 2','1 2']
 //const input = ['6','1 1 1 1 1 1','2 2 4','4 1 3 6 5','2 4 2','2 1 3','1 2','1 2']
 //const input = ['6','10 20 10 20 30 40','0','0','0','0','0','0']
- const input = ['6','2 3 4 5 6 7','2 2 3','2 1 3','2 1 2','2 5 6','2 4 6','2 4 5'];
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const input = ['6','2 3 4 5 6 7','2 2 3','2 1 3','2 1 2','2 5 6','2 4 6','2 4 5'];
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let index = 0;
 const N = +input[index++];
 const population = [0,...input[index++].split(' ').map(Number)];

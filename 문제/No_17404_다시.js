@@ -25,7 +25,7 @@ const solution = (rgb)=>{
             dp[i][1] = Math.min(dp[i-1][0],dp[i-1][2]) + rgb[i][1];
             dp[i][2] = Math.min(dp[i-1][0],dp[i-1][1]) + rgb[i][2];
         }
-        for(let i=0; i<2; i++){
+        for(let i=0; i<=2; i++){
             if(i === firstHouse) continue;
             min = Math.min(min,dp[N-1][i]);
         }

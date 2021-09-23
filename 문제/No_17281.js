@@ -1,4 +1,4 @@
-const input = ['2','4 0 0 0 0 0 0 0 0','4 0 0 0 0 0 0 0 0'];
+//const input = ['2','4 0 0 0 0 0 0 0 0','4 0 0 0 0 0 0 0 0'];
 //const input = ['2','4 0 0 0 1 1 1 0 0','0 0 0 0 0 0 0 0 0'];
 // const input = ['2','0 4 4 4 4 4 4 4 4 4','0 4 4 4 4 4 4 4 4 4'];
 //const input = ['2','4 3 2 1 0 4 3 2 1','1 2 3 4 1 2 3 4 0'];
@@ -15,8 +15,8 @@ const input = ['2','4 0 0 0 0 0 0 0 0','4 0 0 0 0 0 0 0 0'];
 // '1 1 1 1 1 1 1 1 0',
 // '0 2 0 3 0 1 0 2 0'
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const N = +input[0];
 const point = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
