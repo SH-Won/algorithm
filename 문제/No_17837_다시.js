@@ -89,7 +89,7 @@ const solution = ()=>{
             let chess = chesses[number];
             let [ny,nx] = [chess.y + dy[chess.dir],chess.x + dx[chess.dir]];
             
-            // 하얀색
+            
              if(!isValidPos(ny,nx) || board[ny][nx] ===2){
                 if(chess.dir <=2){
                    chess.dir = chess.dir === 1 ? 2 : 1;
@@ -106,6 +106,7 @@ const solution = ()=>{
                     continue; 
                 }
             }
+            // 하얀색
             else if(board[ny][nx] === 0){
                let temp = [];
                const index = newBoard[chess.y][chess.x].findIndex(el => el === chess);

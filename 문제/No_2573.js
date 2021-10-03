@@ -54,6 +54,7 @@ const solution = (iceberg) =>{
     }
     let count =0;
     let year = 0;
+    
     while(true){
         count = 0;
         melt();

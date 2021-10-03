@@ -1,6 +1,6 @@
 //const input =['3 4 4','....','###.','....','1 1 3 1'];
 //const input =['2 2 1','.#','#.','1 1 2 2']
-const input =['4 4 2','....','....','....','....','1 1 4 1']
+//const input =['4 4 2','....','....','....','....','1 1 4 1']
 
 //const fs = require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');

@@ -1,9 +1,8 @@
 //const classroom = ['YYYYY','SYSYS','YYYYY','YSYYS','YYYYY']
 //const classroom = ['SSSSY','YYYYY','YYYYY','YYYYY','YYYYY'];
-const classroom = ['SSSSS','SSSSS','SSSSS','SSSSS','SSSSS'];
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-//const classroom = Array.from({length:5},(_,i)=>input[i].split(''));
+//const classroom = ['SSSSS','SSSSS','SSSSS','SSSSS','SSSSS'];
+const fs = require('fs');
+const classroom = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = () =>{
     let reputedSeven = 0;

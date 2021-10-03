@@ -1,7 +1,7 @@
 // const input = ['9','7 3','7','1 2','1 3','2 7','2 8','2 9','4 5','4 6'];
-const input = ['9','8 6','7','1 2','1 3','2 7','2 8','2 9','4 5','4 6']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const input = ['9','8 6','7','1 2','1 3','2 7','2 8','2 9','4 5','4 6']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = () =>{
     const n = +input[0];
