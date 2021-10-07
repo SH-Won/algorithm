@@ -58,8 +58,8 @@
     // '0 0 0 0 0 0 0 0 0 1',
     // '1 1 0 1 1 1 1 1 0 1',
     // ]//ans 12;
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = () =>{
     const [N,M]= input[0].split(' ').map(Number);

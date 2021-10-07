@@ -38,11 +38,10 @@
 // '943 923 982 981 223 131 222 913 562',
 // '752 572 719 590 551 179 141 137 731',
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 let map = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
-//console.log(map);
 const dx = [-1,0,1,0];
 const dy = [0,1,0,-1];
 const dsx =[[1,1,0,0,0,0,-1,-1,-2],[-1,1,-2,-1,1,2,-1,1,0],[-1,-1,0,0,0,0,1,1,2],[1,-1,2,1,-1,-2,1,-1,0]];

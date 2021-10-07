@@ -79,7 +79,7 @@ const solution = () =>{
 
         //let check = container.filter(belt => belt.durability === 0).length;
         if(count >= K) return console.log(time);
-        console.log(time);
+        
     }
 }
 solution();

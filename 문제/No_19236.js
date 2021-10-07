@@ -105,19 +105,13 @@ const solution = () =>{
             let copyFishes = Array.from({length:fishes.length},(_,i)=> new Fish(fishes[i].y,fishes[i].x,fishes[i].dir,fishes[i].number));
             let copyMap = Array.from({length:4},() => Array(4).fill(0));
             copyFishes.forEach(fish => copyMap[fish.y][fish.x] = fish);
-            //console.log(copyMap[2][2] === map[2][2]);
             const fish = copyMap[ny][nx];
             const fishIndex = copyFishes.findIndex(el => el ===fish);
             const newShark = {y : fish.y ,x :fish.x , dir: fish.dir , sum:shark.sum+fish.number};
             copyFishes.splice(fishIndex,1);
             copyMap[ny][nx] = 0;
             dfs(copyFishes,copyMap,newShark);
-            
 
-            
-            
-            // 0 1 2
-            // 0 2
         }
     }
     dfs(fishes,map,shark);

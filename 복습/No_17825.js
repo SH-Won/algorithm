@@ -1,9 +1,9 @@
 //const dice =[1,2,3,4,1,2,3,4,1,2];
 //const dice =[1,1,1,1,1,1,1,1,1,1];
 //const dice = [5,1,2,3,4,5,5,3,2,4];
-const dice = [5,5,5,5,5,5,5,5,5,5];
-//const fs = require('fs');
-//const dice = fs.readFileSync('/dev/stdin').toString().split(' ').map(Number);
+//const dice = [5,5,5,5,5,5,5,5,5,5];
+const fs = require('fs');
+const dice = fs.readFileSync('/dev/stdin').toString().split(' ').map(Number);
 class Horse{
     constructor(pos,isFinish){
         this.pos = pos;
