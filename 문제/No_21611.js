@@ -84,7 +84,6 @@ const extract = () =>{
                     break;
                 }
                 if(!map[ny][nx]){
-                //    console.log('empty',ny,nx,map[ny][nx],dir)
 
                     flag++;
                     y=ny , x=nx;
@@ -107,7 +106,7 @@ const extract = () =>{
         count.forEach((num,index) => count[index]+=2)
     }
     map.forEach(array => array.fill(0));
-    //console.log(array);
+
     while(true){
     let explode = false;
     for(let i=0; i<array.length; i++){

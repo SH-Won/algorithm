@@ -53,9 +53,6 @@ const dx = [0,-1,-1,0,1,1,1,0,-1];
 const cross =[[1,1],[1,-1],[-1,1],[-1,-1]];
 const isValidPos = (y,x) => (y>=0 && x>=0 && y<N && x<N);
 
-const waterBug = () =>{
-
-}
 const rainning_waterBug = (d,s) =>{
     const dist = s % N;
     let clouds = [];
