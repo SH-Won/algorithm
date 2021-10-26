@@ -14,4 +14,4 @@ const solution = (sticker) =>{
     // console.log(dp1);
     return Math.max(dp[sticker.length],dp1[sticker.length+1])
 }
-console.log(solution([1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2]));
+//console.log(solution([1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2]));

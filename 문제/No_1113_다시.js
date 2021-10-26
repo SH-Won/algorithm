@@ -13,8 +13,8 @@
 // '1555555555551',
 // '1111111111111'
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(Number);
 const map = Array.from({length:N},(_,i)=>input[i+1].split('').map(Number));
 let water = Array.from({length:N},()=>Array(M).fill(0));

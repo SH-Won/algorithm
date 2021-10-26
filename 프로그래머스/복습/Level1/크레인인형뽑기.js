@@ -7,7 +7,6 @@ const solution = (board,moves) => {
             const doll = board[row][column];
             if(doll){
                 if(stack[stack.length-1] === doll){
-                    stack.pop();
                     score+=2
                 }
                 else stack.push(doll);

@@ -38,7 +38,7 @@ const solution = (user_id,banned_id) => {
         }
     }
     dfs(0);
-    console.log(banMap)
+    // console.log(banMap)
     return banMap.size;
 }
 solution(user_id,banned_id);

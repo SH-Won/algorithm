@@ -70,8 +70,8 @@
 //     '0 7 0 5 4 3 2 1',
 //     '1 2 3 1 2 3 1 2 3 1'
 //     ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let index = 0;
 const [N,Q] = input[index++].split(' ').map(Number);
 const mapSize = Math.pow(2,N);

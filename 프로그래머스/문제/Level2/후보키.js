@@ -30,7 +30,7 @@ const solution = (relation) =>{
             //         break;
             //     }
             // }
-            console.log(indexArr)
+
             if(!isCheck){
                 let key = new Set();
                 for(let i=0; i<row; i++){
