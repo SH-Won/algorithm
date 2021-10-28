@@ -45,7 +45,7 @@ const solution = () =>{
     }
     for(let y=0; y<ROW; y++){
         for(let x=0; x<COLUMN; x++){
-            if(!visited[y][x] && map[y][x] === 'L'){
+            if(map[y][x] === 'L'){
             //    const time = bfs(bfs([y,x]).pos).time;
                const time =bfs([y,x]);
             //    console.log(time);
@@ -53,6 +53,7 @@ const solution = () =>{
             }
         }
     }
+    // console.log(visited.flat())
     console.log(maxTime);
 }
 solution();
