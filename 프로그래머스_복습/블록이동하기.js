@@ -11,7 +11,7 @@ const bfs = (map) =>{
     const dy = [-1,1,0,0];
     const dx = [0,0,-1,1];
     const [UP,DOWN,LEFT,RIGHT] = [0,1,2,3];
-    const isValidPos = (y,x) =>(y>=0 && x>=0 && y<N && x<N);
+    // const isValidPos = (y,x) =>(y>=0 && x>=0 && y<N && x<N);
     const getNextPos = (left,right) =>{
         let next =[];
         if(left[y] === right[y]){

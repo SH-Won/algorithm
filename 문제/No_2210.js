@@ -23,5 +23,4 @@ for(let y=0; y<5; y++){
         dfs(y,x,0,map[y][x]);
     }
 }
-console.log(numberMap);
 console.log(numberMap.size)

@@ -1,6 +1,6 @@
+const [A,B,C] = [8,9,10];
 //const fs = require('fs');
 //const [A,B,C] = fs.readFileSync('/dev/stdin').toString().trim().split(' ').map(Number);
-const [A,B,C] = [8,9,10];
 let visited = Array.from({length:A+1},()=>Array(B+1).fill(false));
 
 const bfs = (A,B,C) =>{
