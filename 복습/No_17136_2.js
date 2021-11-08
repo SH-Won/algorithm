@@ -131,10 +131,10 @@ const input = [
 //     '0 0 0 0 0 0 0 0 0 0',
 //     '0 0 0 0 0 0 0 0 0 0'
 // ] //ans 6
-
-// const fs = require('fs');
-// const map = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(row => row.split(' ').map(Number));
 //const map = Array.from({length:10},(_,i)=>input[i].split(' ').map(Number))
+
+const fs = require('fs');
+const map = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(row => row.split(' ').map(Number));
 const solution = (map) =>{
     let paper = [0,5,5,5,5,5];
     let min = Infinity;

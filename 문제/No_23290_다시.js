@@ -206,3 +206,8 @@ const solution = (S,shark) =>{
 }
 
 solution(S,shark);
+
+// let s = [1,1];
+// let a = s;
+// s[0] = 0 , s[1] = 0
+// console.log(a);
