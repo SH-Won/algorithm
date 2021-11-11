@@ -13,30 +13,40 @@ const input = [
 //const fs = require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(num =>+num);
-let farm = Array.from({length:N},(_,i) => input[i+1].split(' ').map(num => +num));
-let min = Infinity;
-let count = 0;
-for(let i=0; i<N; i++){
-   min = Math.min(min,...farm[i])
-}
+const farm = Array.from({length:N},(_,i) => input[i+1].split(' ').map(num => +num));
+const dy = [-1,-1,-1,0,1,1,1,0];
+const dx = [-1,0,1,1,1,0,-1,-1];
 const isValidPos =(y,x) => (y >=0 && x>=0 && y<N && x<M);
-const distance = [[1,0],[-1,0],[0,1],[0,-1],[-1,1],[-1,-1],[1,1],[1,-1]];
-const dfs = (y,x) =>{
-
-    farm[y][x] =min;
-    distance.forEach(([my,mx])=>{
-        const [ny,nx] = [y+my,x+mx];
-        if(!isValidPos(ny,nx) || farm[ny][nx] === min) return;
-        dfs(ny,nx);
-    })
-
-}
-for(let i=0; i<N; i++){
-    for(let j=0; j<M; j++){
-        if(farm[i][j] !== min){
-            dfs(i,j);
-            count++;
+const bfs = (y,x,height,visited) =>{
+    let isTop = true;
+    visited[y][x] = true;
+    let queue = [[y,x]];
+    while(queue.length){
+        const [cy,cx] = queue.shift();
+        for(let i=0; i<8; i++){
+            const [ny,nx] = [cy+dy[i],cx+dx[i]];
+            if(!isValidPos(ny,nx)) continue;
+            if(farm[cy][cx] < farm[ny][nx]) isTop = false;
+            if(!visited[ny][nx] && farm[ny][nx] === height){
+                visited[ny][nx] = true;
+                queue.push([ny,nx]);
+            }
         }
     }
+   return isTop;
 }
-console.log(count);
+const solution = () =>{
+    let visited = Array.from({length:N} ,()=>Array(M).fill(false));
+    let count = 0;
+    for(let y=0; y<N; y++){
+        for(let x=0; x<M; x++){
+            if(!visited[y][x]){
+                let isTop = bfs(y,x,farm[y][x],visited);
+                if(isTop) count++;
+            }
+        }
+    }
+    return console.log(count);
+}
+solution();
+
