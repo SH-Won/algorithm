@@ -60,22 +60,22 @@
 // '1 1 8',
 // '1 1'
 // ]
-const input = [
-    '10 25',
-    '1 1 1',
-    '1 1 2',
-    '1 1 3',
-    '1 1 4',
-    '1 1 5',
-    '1 1 6',
-    '1 1 7',
-    '1 1 8',
-    '2 1 1',
-    '2 1 1',
-    '2 1'
-    ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '10 25',
+//     '1 1 1',
+//     '1 1 2',
+//     '1 1 3',
+//     '1 1 4',
+//     '1 1 5',
+//     '1 1 6',
+//     '1 1 7',
+//     '1 1 8',
+//     '2 1 1',
+//     '2 1 1',
+//     '2 1'
+//     ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [M,S] = input[0].split(' ').map(Number);
 const fishInfo = Array.from({length:M},(_,i)=>input[i+1].split(' ').map(num => +num - 1));
 const shark = input[M+1].split(' ').map(num => +num -1);

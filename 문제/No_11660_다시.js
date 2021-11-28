@@ -8,17 +8,17 @@
 // '3 4 3 4',
 // '1 1 4 4'
 // ]
-const input = [
-'2 4',
-'1 2',
-'3 4',
-'1 1 1 1',
-'1 2 1 2',
-'2 1 2 1',
-'2 2 2 2'
-]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+// '2 4',
+// '1 2',
+// '3 4',
+// '1 1 1 1',
+// '1 2 1 2',
+// '2 1 2 1',
+// '2 2 2 2'
+// ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(Number);
 const map = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
 const startEndInfo = Array.from({length:M},(_,i)=>input[i+N+1].split(' ').map(Number));

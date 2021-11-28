@@ -68,8 +68,8 @@
 // '1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024',
 // '1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024 1024',
 // ] //ans 32768
-//const fs =require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 const board = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
 const [LEFT,RIGHT,UP,DOWN] = [0,1,2,3];

@@ -33,5 +33,5 @@ for(let y=1; y<M; y++){
         max = Math.max(dp[y][x],max);
     }
 }
-console.log(...dp[0],...dp.map(row => row[0]))
+
 console.log(max);

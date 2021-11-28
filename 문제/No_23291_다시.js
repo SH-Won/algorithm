@@ -59,7 +59,6 @@ const solution = (fishBowl) =>{
     
     while(true){
         let min = Math.min(...map[N].slice(0,-1));
-        
         for(let i=0; i<map[N].length; i++){
             if(map[N][i]  === min) map[N][i]++;
         }
@@ -80,7 +79,6 @@ const solution = (fishBowl) =>{
                     map[r][column] = 0;
                     r--;
                 }
-                
                 count++;
                 column--;
                 array.reverse();
@@ -103,7 +101,6 @@ const solution = (fishBowl) =>{
         let count =2 ;
         while(count--){
             end += (n /= 2);
-           
             let array = [];
             for(let y=N; y>N-row; y--){
                 for(let x=end-1; x>=start; x--){

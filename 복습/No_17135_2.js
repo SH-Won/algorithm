@@ -7,7 +7,7 @@
 //const input = ['5 5 2','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0','1 1 1 1 1'];
 
 //const input = ['5 5 3','1 1 1 0 1','0 1 1 0 0','1 1 1 0 0','0 1 1 0 0','1 1 1 0 0']; //ans 13
-const input = ['5 5 2','1 0 1 1 1','0 1 1 1 1','1 0 1 0 1','1 1 0 1 0','1 0 1 0 1'] //ans 14
+//const input = ['5 5 2','1 0 1 1 1','0 1 1 1 1','1 0 1 0 1','1 1 0 1 0','1 0 1 0 1'] //ans 14
 
 //const fs =require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');

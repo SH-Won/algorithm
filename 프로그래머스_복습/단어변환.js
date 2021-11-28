@@ -11,12 +11,10 @@ const solution = (begin,target,words) =>{
     let queue = [[begin,0]];
     while(queue.length){
         const [word,count] = queue.shift();
-        // console.log(word,count);
         if(word === target) return count
         for(let i=0; i<words.length; i++){
             const nextWord = words[i];
             if(!visited[i] && isTransable(word,nextWord)){
-               console.log(word,nextWord);
                queue.push([nextWord,count+1]);
                visited[i] = true;
             }

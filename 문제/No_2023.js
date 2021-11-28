@@ -1,6 +1,6 @@
-const N = 4;
-//const fs = require('fs');
-//const N = fs.readFileSync('/dev/stdin').toString().trim();
+//const N = 4;
+const fs = require('fs');
+const N = fs.readFileSync('/dev/stdin').toString().trim();
 const isPrime = (number) =>{
     if(number === 1) return false;
     for(let i=2; i<=Math.sqrt(number); i++){

@@ -1,9 +1,9 @@
 //const input = ['6','0 0 0 0 0 0','0 1 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0']
 //const input = ['3','0 0 0','0 0 0','0 0 0'];
 //const input =['4','0 0 0 0','0 0 0 0','0 0 0 0','0 0 0 0'];
-const input = ['5','0 0 1 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+//const input = ['5','0 0 1 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 const house = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
 const dy = [0,1,1];

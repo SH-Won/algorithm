@@ -3,8 +3,8 @@
 // const input = ['3 3','F.F','.J.','F.F'] //IMPOSIBLE;
 // const input = ['5 5','#####','#...#','#.J.#','#...#','#####']; //IMPOSSIBLE
 // const input = ['4 4','###F','#J.#','#..#','#..#']; //3 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [R,C] = input[0].split(' ').map(Number);
 const map = Array.from({length:R},(_,i)=>input[i+1].split(''));
 const dy = [1,-1,0,0];

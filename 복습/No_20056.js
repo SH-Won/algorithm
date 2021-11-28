@@ -2,8 +2,8 @@
 // const input = ['4 2 2','1 1 5 2 2','1 4 7 1 6'];
 // const input = ['4 2 3','1 1 5 2 2','1 4 7 1 6'];
 // const input = ['7 5 3','1 3 5 2 4','2 3 5 2 6','5 2 9 1 7','6 2 1 3 5','4 4 2 4 2'];
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M,K] = input[0].split(' ').map(Number);
 class FireBall{
     constructor(y,x,m,s,d){

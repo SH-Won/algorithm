@@ -59,18 +59,18 @@
 // '0 0 5 0 15 0 0 0',
 // '0 0 40 0 0 0 20 0'
 // ]
-const input =[
-    '7 8 50',
-'0 0 0 0 0 0 0 9',
-'0 0 0 0 3 0 0 8',
-'-1 0 5 0 0 0 22 0',
-'-1 8 0 0 0 0 0 0',
-'0 0 0 0 0 10 43 0',
-'0 0 5 0 15 0 0 0',
-'0 0 40 0 0 0 20 0'
-]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '7 8 50',
+// '0 0 0 0 0 0 0 9',
+// '0 0 0 0 3 0 0 8',
+// '-1 0 5 0 0 0 22 0',
+// '-1 8 0 0 0 0 0 0',
+// '0 0 0 0 0 10 43 0',
+// '0 0 5 0 15 0 0 0',
+// '0 0 40 0 0 0 20 0'
+// ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [R,C,T] = input[0].split(' ').map(Number);
 const map = Array.from({length:R},(_,i)=>input[i+1].split(' ').map(Number));
 const dy = [1,-1,0,0];

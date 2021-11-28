@@ -113,12 +113,12 @@
 // '5 0 1',
 // '3 0 4',
 // ] // ans 478
+
 //const fs = require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M,T] = input[0].split(' ').map(Number);
 const circleBoard = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
 const command = Array.from({length:T},(_,i) =>input[i+N+1].split(' ').map(Number));
-// 0 시계방향 1 반시계방향
 const dy = [1,-1,0,0];
 const dx = [0,0,1,-1];
 const isValidPos =  (y,x) => (y>=0 && x>=0 && y<N && x<M);

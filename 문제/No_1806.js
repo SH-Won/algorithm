@@ -19,5 +19,3 @@
 // }
 // solution();
 
-let str = "1234";
-console.log(str.reverse());

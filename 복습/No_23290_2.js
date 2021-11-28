@@ -75,8 +75,8 @@
 //     '2 1'
 //     ]
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [M,S] = input[0].split(' ').map(Number);
 const fishInfo = Array.from({length:M},(_,i)=>input[i+1].split(' ').map(num => +num -1));
 const shark = input[M+1].split(' ').map(num => +num -1);
