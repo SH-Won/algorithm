@@ -16,3 +16,5 @@ const solution = (gems) => {
     return answer;
 }
 console.log(solution(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]));
+// let map = new Map();
+
