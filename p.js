@@ -1,17 +1,12 @@
-let string = "{{2},{2,1},{2,1,3},{2,1,3,4}}"
-
-
-const tuple = (s)=>{
-    const elements = s.split('},{').map(element => element.split(',').map(Number)).sort((a,b)=> a.length - b.length);
-   const result = elements.reduce((acc,element)=>{
-       element.forEach(el =>{
-           if(!acc.includes(el)) acc.push(el);
-       })
-       return acc;
-   },[])
-   return result;
+class Page{
+    constructor(url){
+        this.url = url;
+    }
+    render(data){
+        return console.log(data);
+    }
 }
-const solution = (s) =>{
-    return tuple(s.slice(2,-2));
-}
-console.log(solution(string));
+
+const page = new Page('test');
+const data = 'http';
+page.render(data);
