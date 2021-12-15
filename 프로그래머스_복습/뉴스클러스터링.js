@@ -22,5 +22,4 @@ const solution = (str1,str2) =>{
     union -=interSection;
     if(union === 0) return 65536;
     return Math.floor((interSection / union) * 65536);
-
 }

@@ -14,6 +14,7 @@ const solution = (n,words) =>{
 let array = ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]
 //let array = ["hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"]
 console.log(solution(3,array))
+
 // function solution(n,words){
 //     let answer =[0,0];
 //     let array = [];

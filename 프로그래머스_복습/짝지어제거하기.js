@@ -2,7 +2,6 @@ const solution = (s) =>{
     let stack = [];
     let index=0;
     while(index < s.length){
-        console.log(stack);
         if(stack[stack.length-1] === s[index]){
             stack.pop();
             index++;
