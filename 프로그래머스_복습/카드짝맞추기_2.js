@@ -21,9 +21,24 @@ const findCard = (sr,sc,count,matchCard,board) =>{
             while(isValidPos(nr,nc) && !board[nr][nc]){
                 nr+=dr[i] , nc+=dc[i];
             }
-            if(isValidPos(nr,nc) && !visited[nr][nc]){
+            // !visited[nr][nc] 때문에 방문을 했다면 
+            // 밑에 if 문으로 넘어가기 때문에 잘못된 로직
+            // if(isValidPos(nr,nc) && !visited[nr][nc]){
+            //     visited[nr][nc] = true;
+            //     queue.push([nr,nc,cnt+1]);
+            //     continue;
+            // }
+            // const [pr,pc] = [nr-dr[i],nc-dc[i]];
+            // if(!visited[pr][pc]){
+            //      visited[pr][pc] = true;
+            //      queue.push([pr,pc,cnt+1]);
+            // }
+
+            if(isValidPos(nr,nc)){
+                if(!visited[nr][nc]){
                 visited[nr][nc] = true;
                 queue.push([nr,nc,cnt+1]);
+                }
                 continue;
             }
             const [pr,pc] = [nr-dr[i],nc-dc[i]];
