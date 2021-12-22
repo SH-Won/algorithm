@@ -40,8 +40,31 @@ const isValidPos= (y,x) => (y>=0 && x>=0 && y<N && x<M);
 
 //     } 
 // }
-let count = 0;
-const dfs = (y,x,dir) =>{
+
+
+
+// let count = 0;
+// const dfs = (y,x,dir) =>{
+//     if(!visited[y][x]){
+//         visited[y][x] = true;
+//         count++;
+//     }
+    
+//     for(let i=dir+3 ; i>=dir; i--){
+//         const [ny,nx] = [y+go[i%4][0],x+go[i%4][1]];
+//        // console.log(ny,nx);
+//         if(!isValidPos(ny,nx) || visited[ny][nx] || map[ny][nx] ==='1') continue;
+//         return dfs(ny,nx,i%4);
+//     }
+//     const [ny,nx] = [y+back[dir][0],x+back[dir][1]];
+//     if(!isValidPos(ny,nx) || map[ny][nx] ==='1') return;
+//     return dfs(ny,nx,dir);
+// }
+// dfs(robot[0],robot[1],robot[2]);
+// console.log(count);
+
+
+const dfs = (y,x,dir,count) =>{
     if(!visited[y][x]){
         visited[y][x] = true;
         count++;
@@ -51,11 +74,11 @@ const dfs = (y,x,dir) =>{
         const [ny,nx] = [y+go[i%4][0],x+go[i%4][1]];
        // console.log(ny,nx);
         if(!isValidPos(ny,nx) || visited[ny][nx] || map[ny][nx] ==='1') continue;
-        return dfs(ny,nx,i%4);
+        return dfs(ny,nx,i%4,count);
     }
     const [ny,nx] = [y+back[dir][0],x+back[dir][1]];
-    if(!isValidPos(ny,nx) || map[ny][nx] ==='1') return;
-    return dfs(ny,nx,dir);
+    if(!isValidPos(ny,nx) || map[ny][nx] ==='1') return count;
+    return dfs(ny,nx,dir,count);
 }
-dfs(robot[0],robot[1],robot[2]);
-console.log(count);
+const answer = dfs(robot[0],robot[1],robot[2],0);
+console.log(answer);
