@@ -30,14 +30,14 @@ function curve(){
 }
 const solution = (input) =>{
     const N = +input[0];
-    let map = Array.from({length:100},()=>Array(100).fill(false));
+    let map = Array.from({length:101},()=>Array(101).fill(false));
     DragonCurve.prototype.dy = [-1,0,1,0] , DragonCurve.prototype.dx = [0,-1,0,1];
     DragonCurve.prototype.curve = curve , DragonCurve.prototype.map = map;
     const dragonCurves = Array.from({length:N},(_,i) => new DragonCurve(...input[i+1].split(' ').map(Number)));
     dragonCurves.forEach(dc => dc.curve());
     let answer = 0;
-    for(let y=1; y<100; y++){
-        for(let x=1; x<100; x++){
+    for(let y=1; y<=100; y++){
+        for(let x=1; x<=100; x++){
              if(map[y][x] && map[y-1][x] && map[y][x-1] && map[y-1][x-1]){
                  answer++;
              }
