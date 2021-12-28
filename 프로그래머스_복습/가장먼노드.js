@@ -8,13 +8,11 @@ const getMaxNodeCount = (edge) =>{
         for(let i=0; i<edge[node].length; i++){
             const nextNode = edge[node][i];
             if(dist[nextNode] !==-1) continue;
-
             dist[nextNode] = dist[node] + 1;
             queue.push(nextNode);
             if(dist[nextNode] > max) max = dist[nextNode];
         }
     }
-    console.log(dist);
     return dist.filter(d => d === max).length;
 }
 const solution = (n,vertex) =>{

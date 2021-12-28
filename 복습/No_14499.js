@@ -27,8 +27,8 @@
 //     '4 4 1 1 3 3 2 2 4 4 1 1 3 3 2 2',
 //     ]
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[0,0,-1,1],[1,-1,0,0]];
 const [EAST,WEST,NORTH,SOUTH] = [0,1,2,3];
 const [U,E,W,S,N,D] = [0,1,2,3,4,5];

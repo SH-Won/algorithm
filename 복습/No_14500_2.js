@@ -13,15 +13,15 @@
     // '1 2 3 4 5',
     // '1 2 3 4 5',
     // ]
-    const input = [
-        '4 10',
-        '1 2 1 2 1 2 1 2 1 2',
-        '2 1 2 1 2 1 2 1 2 1',
-        '1 2 1 2 1 2 1 2 1 2',
-        '2 1 2 1 2 1 2 1 2 1'
-    ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+    // const input = [
+    //     '4 10',
+    //     '1 2 1 2 1 2 1 2 1 2',
+    //     '2 1 2 1 2 1 2 1 2 1',
+    //     '1 2 1 2 1 2 1 2 1 2',
+    //     '2 1 2 1 2 1 2 1 2 1'
+    // ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(Number);
 const map = Array.from({length:N}, (_,i) => input[i+1].split(' ').map(Number));
 const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];

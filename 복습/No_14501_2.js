@@ -3,8 +3,8 @@
 //const input =['7','3 10','5 20','1 10','1 20','2 15','4 40','2 200']
 //const input =['10','1 1','1 2','1 3','1 4','1 5','1 6','1 7','1 8','1 9','1 10']
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMaxEarn = (N,dp,schedule,day) =>{
     if(day >=N) return 0;

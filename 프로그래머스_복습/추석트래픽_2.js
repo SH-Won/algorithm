@@ -15,14 +15,14 @@ const solution = (lines) =>{
         const [startRange,endRange] = [logPoints[i],logPoints[i]+1];
         let count = 0;
         for(let j=0; j<startEndPoints.length; j++){
-            const [start,end] = startEndPoints[i];
+            const [start,end] = startEndPoints[j]
             if( (start >= startRange && start < endRange) || 
                 (end >= startRange && end < endRange ) ||
                 (start < startRange &&  end >= endRange)) count++
         }
         max = Math.max(max,count);
     }
-
+    return max
 }
 // const lines =[
 //     "2016-09-15 01:00:04.002 2.0s",

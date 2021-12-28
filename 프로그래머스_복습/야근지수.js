@@ -1,4 +1,4 @@
-const solution = (works,n) =>{
+const solution = (n,works) =>{
     works.sort((a,b) => a-b);
     while(n){
         const max = works[works.length-1];

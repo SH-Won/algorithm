@@ -13,6 +13,6 @@ const solution = (N,number) =>{
             }
         }
         if(setArr[i].has(number)) return i;
-
     }
+    return -1
 }

@@ -89,8 +89,8 @@
 //     '1 4 2 3',
 //     '1 4 2 3',
 //     ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 function Shark(y,x,dir,number){
     this.y = y;
