@@ -73,29 +73,26 @@ function Horse(y,x,dir){
 const moveHorse =(horse) =>{
    let {y,x,dir} = horse;
    const [dy,dx] = [horse.dy,horse.dx];
-   const [ny,nx] = [y+dy[dir],x+dx[dir]];
+   let [ny,nx] = [y+dy[dir],x+dx[dir]];
+   let moveHorses ;
+   const index = horse.board[y][x].findIndex(el => el === horse);
    if(!horse.isValidPos(ny,nx) || horse.map[ny][nx] === 2 ){
-      dir = dir < 2 ? dir === 1 ? 0 : 1 : dir===2 ? 3 : 2;
-      const [ny,nx] = [y+dy[dir],x+dx[dir]];
+      dir = dir < 2 ? (dir === 1 ? 0 : 1) : (dir===2 ? 3 : 2);
+      [ny,nx] = [y+dy[dir],x+dx[dir]];
       horse.dir = dir;
       if(!horse.isValidPos(ny,nx) || horse.map[ny][nx] === 2){
           return false;
       }
-      const isFinish = moveHorse(horse);
-      return isFinish;
+      return moveHorse(horse);
    }
    else if(horse.map[ny][nx] === 0){
-       const index = horse.board[y][x].findIndex(horse => horse);
-       let horses = horse.board[y][x].splice(index);
-       horses.forEach(horse => horse.y = ny , horse.x = nx);
-       horse.board[ny][nx].push(...horses);
+       moveHorses = horse.board[y][x].splice(index);
    }
    else if(horse.map[ny][nx] ===1){
-       const index = horse.board[y][x].findIndex(horse => horse);
-       let horses = horse.board[y][x].splice(index).reverse();
-       horses.forEach(horse => horse.y = ny , horse.x = nx);
-       horse.board[ny][nx].push(...horses);
+       moveHorses = horse.board[y][x].splice(index).reverse();
    }
+   moveHorses.forEach(horse => (horse.y = ny , horse.x = nx));
+   horse.board[ny][nx].push(...moveHorses);
    if(horse.board[ny][nx].length >= 4) return true;
    return false; 
 }
@@ -113,12 +110,10 @@ const solution = (input) =>{
     let time = 0;
     while(time < 1000){
         time++;
-        // console.log(board);
         for(let i=0; i<horses.length; i++){
             const isFinish = moveHorse(horses[i]);
             if(isFinish) return console.log(time);
         }
-        // console.log(board);
     }
     console.log(-1);
 }
