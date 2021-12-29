@@ -154,19 +154,19 @@
 // '6 5 6 6',
 // '4 6 1 2',
 // ] //ans 59
-const input = [
-    '4 2 3',
-    '0 0 0 0',
-    '0 0 0 0',
-    '0 0 0 0',
-    '0 0 0 0',
-    '3 1',
-    '1 1 1 2',
-    '1 2 3 2'
-] // ans 4
+// const input = [
+//     '4 2 3',
+//     '0 0 0 0',
+//     '0 0 0 0',
+//     '0 0 0 0',
+//     '0 0 0 0',
+//     '3 1',
+//     '1 1 1 2',
+//     '1 2 3 2'
+// ] // ans 4
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
 
 const drive = (taxi,customers,map,isValidPos,M) =>{

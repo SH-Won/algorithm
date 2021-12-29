@@ -22,8 +22,8 @@
 //     '1 2 -1 3',
 //     '-1 -1 1 1'
 // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
 const [N,M] = input[0].split(' ').map(Number);
 const map = Array.from({length:N},(_,i) =>input[i+1].split(' ').map(Number));

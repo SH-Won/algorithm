@@ -42,8 +42,8 @@
     // '2 1',
     // '1 1',
     // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(Number);
 const map = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
 const command = Array.from({length:M},(_,i)=>input[i+N+1].split(' ').map(Number));

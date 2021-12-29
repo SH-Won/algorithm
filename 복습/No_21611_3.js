@@ -1,14 +1,14 @@
-const input = [
-'7 1',
-'0 0 0 0 0 0 0',
-'3 2 1 3 2 3 0',
-'2 1 2 1 2 1 0',
-'2 1 1 0 2 1 1',
-'3 3 2 3 2 1 2',
-'3 3 3 1 3 3 2',
-'2 3 2 2 3 2 3',
-'2 2'
-]
+// const input = [
+// '7 1',
+// '0 0 0 0 0 0 0',
+// '3 2 1 3 2 3 0',
+// '2 1 2 1 2 1 0',
+// '2 1 1 0 2 1 1',
+// '3 3 2 3 2 1 2',
+// '3 3 3 1 3 3 2',
+// '2 3 2 2 3 2 3',
+// '2 2'
+// ]
 // const input = [
 // '7 4',
 // '0 0 0 2 3 2 3',
@@ -54,8 +54,8 @@ const input = [
 //     '1 1',
 //     '1 3'
 //     ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [N,M] = input[0].split(' ').map(Number);
 const map = Array.from({length:N},(_,i)=>input[i+1].split(' ').map(Number));
 const command = Array.from({length:M},(_,i)=>input[i+N+1].split(' ').map(Number));
@@ -130,14 +130,13 @@ const insert = (groupArr,map) =>{
     const [dy,dx] = [[0,1,0,-1],[-1,0,1,0]];
     let count = [1,1,2,2];
     let [y,x] = [Y,X];
-    console.log(map);
     groupArr.reverse();
-    while(groupArr.length){
+    while(true){
         for(let dir=0; dir<4; dir++){
             let c = count[dir];
             while(c--){
                 y+=dy[dir] ,x+=dx[dir];
-                if(x === -1 ) return ;
+                if(x === -1 || !groupArr.length) return ;
                 map[y][x] = groupArr.pop();
             }
         }
@@ -161,7 +160,7 @@ const solution = (map,command) =>{
         sum+=score;
         const groupArr = makeGroup(explodedArr);
         insert(groupArr,map);
-        console.log(map);
     }
+    console.log(sum);
 }
 solution(map,command);
