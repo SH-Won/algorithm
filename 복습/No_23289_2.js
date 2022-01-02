@@ -12,7 +12,6 @@
 //     '4 4 1',
 //     '5 6 0'
 // ]
-
 // const input = [
 // '7 8 1',
 // '0 0 0 0 0 0 0 0',
@@ -149,8 +148,8 @@
     //     '3 4 1',
         
     // ]
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [R,C,K] = input[0].split(' ').map(Number);
 const map = Array.from({length:R},(_,i)=>input[i+1].split(' ').map(Number));
 const W = +input[R+1];
