@@ -3,9 +3,9 @@
 //const input = ['4 5 4','4 1 3 3 8','1 3 5 2 9','2 4 8 4 1','4 5 0 1 4'];
 const input = ['2 2 4','1 1 1 1 1','2 2 2 2 2','1 2 1 2 3','2 1 2 1 4']
 
-//const fs = require('fs');
+//const fs = require('fs')
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const [dy,dx] = [[-1,1,0,0],[0,0,1,-1]];
+
 const [UP,DOWN,RIGHT,LEFT] = [0,1,2,3];
 function move(){
    let {r,c,s,d,R,C} = this;
@@ -46,9 +46,9 @@ function getPos(to,pos){
     return [pos,rotateCount]
 }
 const setShark = (shark,map) =>{
-    const {r,c,size} = shark;
+    const {r,c,z} = shark;
     if(!map[r][c]) map[r][c] = shark;
-    else if(map[r][c].z < size) map[r][c] = shark;
+    else if(map[r][c].z < z) map[r][c] = shark;
 }
 const hunting = (fisher,map) =>{
     for(let r=0; r<map.length; r++){
@@ -70,10 +70,10 @@ const solution = (input) =>{
         this.z = z;
     }
     let map = Array.from({length:R},()=>Array(C).fill(null));
-    let sharks = Array.from({length:M},(_,i)=> new Shark(...input[i+1].split(' ').map(Number)));
     Shark.prototype.move = move , Shark.prototype.getPos = getPos;
     Shark.prototype.R = R , Shark.prototype.C = C;
-    sharks.forEach(shark => map[shark.r][shark.c] = shark);
+    let sharks = Array.from({length:M},(_,i)=> new Shark(...input[i+1].split(' ').map(Number)));
+    sharks.forEach(shark => setShark(shark,map));
     let sum = 0;
     for(let fisher=0; fisher<C; fisher++){
         sum += hunting(fisher,map);
