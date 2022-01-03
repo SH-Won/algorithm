@@ -1,12 +1,12 @@
 //const input = ['3 2','1 2 1 2 1 2'];
 // const input = ['3 6','10 10 10 10 10 10'];
 // const input = ['4 5','10 1 10 6 3 4 8 2']
-// const input = ['5 8','100 99 60 80 30 20 10 89 99 100']
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const input = ['5 8','100 99 60 80 30 20 10 89 99 100']
+//const fs = require('fs');
+//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getZeroCount = (A) =>{
-    return A.filter(dura => dura === 0).length
+    return A.reduce((acc,dura) => acc+= dura === 0 ? 1 : 0 ,0);
 }
 const moveRobot = (robots,A,N) =>{
     if(robots[N-1]) robots[N-1] = false;
