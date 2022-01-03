@@ -1,9 +1,9 @@
 //const input = ['6','3','3 4','2 5','5 3','3','3 D','15 L','17 D'];
 //const input = ['10','4','1 2','1 3','1 4','1 5','4','8 D','10 D','11 D','13 L'];
-const input = ['10','5','1 5','1 3','1 2','1 6','1 7','4','8 D','10 D','11 D','13 L'];
+//const input = ['10','5','1 5','1 3','1 2','1 6','1 7','4','8 D','10 D','11 D','13 L'];
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const N = +input[0];
 const K = +input[1];
 const apple = Array.from({length:K},(_,i)=>input[i+2].split(' ').map(num => +num -1));
