@@ -1,8 +1,8 @@
 // const input = ['2','5 6','0 0 1 0']
 // const input = ['3','3 4 5','1 0 1 0']
-const input = ['6','1 2 3 4 5 6','2 1 1 1']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['6','1 2 3 4 5 6','2 1 1 1']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const calc = (num1,num2,op) =>{
     const [PLUS,MINUS,MULTI,DIV] = [0,1,2,3];
