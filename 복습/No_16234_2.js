@@ -2,9 +2,9 @@
 // const input =['2 40 50','50 30','20 40'];
 // const input =['2 20 50','50 30','30 40'];
 // const input =['3 5 10','10 15 20','20 30 25','40 22 10'];
-const input = ['4 10 50','10 100 20 90','80 100 60 70','70 20 30 40','50 20 100 10'];
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['4 10 50','10 100 20 90','80 100 60 70','70 20 30 40','50 20 100 10'];
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const movePeople = (country,countries,move,L,R) =>{
     const n = countries.length;

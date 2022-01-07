@@ -26,8 +26,9 @@
 // '3 3 3 3 2 2',
 // '3 3 3 3 2 2',
 // ]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const isLoad = (load,L) =>{
     let count = 1;

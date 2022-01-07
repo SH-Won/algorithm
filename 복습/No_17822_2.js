@@ -114,8 +114,8 @@
 // '3 0 4',
 // ] // ans 478
 
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const rotate = (roulette,d,k) =>{
     const CLOCKWISE = 0;

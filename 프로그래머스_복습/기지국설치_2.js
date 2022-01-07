@@ -9,7 +9,7 @@ const solution = (n,stations,w)=>{
         }
         else{
             current = station+w+1;
-            station = index < stations.length ? station[index++] : n+w+1;
+            station = index < stations.length ? stations[index++] : n+w+1;
         }
     }
     return answer;
