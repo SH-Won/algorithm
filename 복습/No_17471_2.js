@@ -2,6 +2,7 @@
 // const input = ['6','1 1 1 1 1 1','2 2 4','4 1 3 6 5','2 4 2','2 1 3','1 2','1 2']
 // const input = ['6','10 20 10 20 30 40','0','0','0','0','0','0']
 const input = ['6','2 3 4 5 6 7','2 2 3','2 1 3','2 1 2','2 5 6','2 4 6','2 4 5']
+
 // const fs = require('fs');
 // const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const findArea = (start,edge,population,visited,group) =>{
@@ -15,8 +16,7 @@ const findArea = (start,edge,population,visited,group) =>{
              const nArea = edge[area][i];
              for(let j=0; j<group.length; j++){
                  const target = group[j];
-                 if(visited[nArea]) continue;
-                 if(target === nArea){
+                 if(!visited[nArea] && target === nArea){
                     queue.push(nArea);
                     visited[nArea] = true;
                     break;
@@ -56,8 +56,8 @@ const solution = (input) =>{
     const N = +input[0];
     const population = input[1].split(' ').map(Number);
     const edge = Array.from({length:N},(_,i)=>{
-        const [n,...adj] = input[i+2].split(' ').map(Number);
-        return n === 0 ? [] : [...adj];
+        const [n,...adj] = input[i+2].split(' ').map(num => +num -1);
+        return n === -1 ? [] : [...adj];
     })
     let sumArr = [];
     let visited = Array(N).fill(false);
