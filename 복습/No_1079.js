@@ -1,5 +1,5 @@
 // const input = ['4','500 500 500 500','1 4 3 -2','-2 1 4 3','3 -2 1 4','4 3 -2 1','1']
-const input = ['5','500 500 500 500 501','1 4 3 -2 5','-2 1 4 3 5','3 -2 1 4 5','4 3 -2 1 5','5 4 3 -2 1','1']
+// const input = ['5','500 500 500 500 501','1 4 3 -2 5','-2 1 4 3 5','3 -2 1 4 5','4 3 -2 1 5','5 4 3 -2 1','1']
 // const fs = require('fs');
 // const input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
@@ -17,7 +17,6 @@ const getDays = (guilty,R,eunjin) =>{
            //밤
            for(let i=0; i<people.length; i++){
                if(i === eunjin || !people[i]) continue;
-               
                people[i] = false;
                for(let j=0; j<guilty.length; j++){
                   if(people[j]) guilty[j] += R[i][j];

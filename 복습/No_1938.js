@@ -1,7 +1,7 @@
 // const input = ['5','B0011','B0000','B0000','11000','EEE00']
-const input = ['4','B000','B01E','B00E','000E']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['4','B000','B01E','B00E','000E']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMinCount = (map,startCore,endCore) =>{
     const N = map.length;

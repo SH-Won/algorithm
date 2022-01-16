@@ -22,9 +22,9 @@
 // const input = ['3 5','..0..','.###.','..1.A']
 // const input = ['4 5','0....','.#B#A','.#.#.','b#a#1']
 // const input = ['1 11','c.0.C.C.C.1']
-const input = ['3 6','###...','#0A.1a','###...']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['3 6','###...','#0A.1a','###...']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMinTime = (start,map) =>{
     const [N,M] = [map.length, map[0].length];

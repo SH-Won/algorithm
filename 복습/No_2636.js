@@ -14,8 +14,8 @@ const input = [
     '0 0 1 1 1 1 1 1 1 0 0 0',
     '0 0 0 0 0 0 0 0 0 0 0 0'
     ]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
 const getAir = (y,x,map) =>{
     const [R,C] = [map.length , map[0].length];

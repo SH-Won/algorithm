@@ -3,9 +3,9 @@
 // const input = ['7','8*3+5+2']
 // const input =['19','1*2+3*4*5-6*7*8*9*0']
 // const input =['19','1*2+3*4*5-6*7*8*9*9']
-const input = ['19','1-9-1-9-1-9-1-9-1-9']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['19','1-9-1-9-1-9-1-9-1-9']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const calc = (op,num1,num2) =>{
     switch(op){

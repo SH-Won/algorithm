@@ -1,9 +1,9 @@
-const input = ['6','0 0 0 0 0 0','0 1 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0']
+// const input = ['6','0 0 0 0 0 0','0 1 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0','0 0 0 0 0 0']
 // const input = ['3','0 0 0','0 0 0','0 0 0'];
 // const input =['4','0 0 0 0','0 0 0 0','0 0 0 0','0 0 0 0'];
 // const input = ['5','0 0 1 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0','0 0 0 0 0']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getWayCount = (house) =>{
     const N = house.length;

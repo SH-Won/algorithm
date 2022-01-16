@@ -1,6 +1,6 @@
-const input = ['5 7','WLLWWWL','LLLWLLL','LWLWLWW','LWLWLLL','WLLWLWW']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['5 7','WLLWWWL','LLLWLLL','LWLWLWW','LWLWLLL','WLLWLWW']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMinTime = (map) =>{
     const [R,C] = [map.length ,map[0].length];

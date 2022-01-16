@@ -23,20 +23,20 @@
 //     'WBWBWBWB',
     
 // ]
-const input = [
-    '9 23',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBB',
-'BBBBBBBBBBBBBBBBBBBBBBW',
-]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '9 23',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBB',
+// 'BBBBBBBBBBBBBBBBBBBBBBW',
+// ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const white = [
     'WBWBWBWB',
     'BWBWBWBW',
