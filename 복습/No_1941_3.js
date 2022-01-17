@@ -1,7 +1,7 @@
 // const input = ['YYYYY','SYSYS','YYYYY','YSYYS','YYYYY'];
-const input = ['SSSSS','SSSSS','SSSSS','SSSSS','SSSSS']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['SSSSS','SSSSS','SSSSS','SSSSS','SSSSS']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const isLinked = (start,linkMap) =>{
     const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
