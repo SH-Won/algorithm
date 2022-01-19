@@ -47,3 +47,4 @@ const solution = (board,aloc,bloc) =>{
     return answer = A(ay,ax,by,bx,board);
 }
 console.log(solution([[1, 1, 1], [1, 1, 1], [1, 1, 1]],[1,0],[1,2]))
+// console.log((solution([[1, 1, 1], [1, 0, 1], [1, 1, 1]],[1,0],[1,2])))
