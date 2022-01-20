@@ -30,4 +30,33 @@ const sum = (tree,node,left,right,start,end) =>{
     return sum(tree,node*2,left,right,start,mid) + sum(tree,node*2+1,left,right,mid+1,end);
     
 }
-console.log(sum(tree,1,8,11,0,array.length-1))
+// console.log(sum(tree,1,8,11,0,array.length-1))
+
+class Seg{
+    constructor(tree){
+        this.n = tree.length;
+        this.tree = Array(tree.length).concat(tree);
+    }
+    init(){
+        for(let i=this.n-1; i > 0; i--){
+            this.tree[i] = this.tree[i << 1] + this.tree[i<<1|1]
+        }
+    }
+    update(index,value){
+        for(this.tree[index+=this.n]+=value; index > 1; index >>=1){
+            this.tree[index>>1] = this.tree[index] + this.tree[index^1];
+        }
+    }
+    query(left,right){
+        let result = 0;
+        for(left+=this.n, right+=this.n+1; left < right; left >>=1, right >>=1 ){
+             if(left & 1) result+= this.tree[left++];
+             if(right & 1) result += this.tree[--right];
+        }
+        return result;
+    }
+}
+const seg = new Seg([5,4,3,2,1,0]);
+seg.init();
+const rangeSum = seg.query(3,5);
+console.log(rangeSum);
