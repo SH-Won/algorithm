@@ -1,0 +1,33 @@
+let array = [3,5,6,7,2,9,4,5,2,8,1,5];
+const h = Math.ceil(Math.sqrt(array.length));
+const size = 1 << (h+1);
+let tree = Array(size);
+
+const makeTree = (arr,tree,node,start,end) =>{
+    if(start === end){
+        return tree[node] = arr[start];
+    }
+    const mid = (start+end) / 2 >>0;
+    return tree[node] = makeTree(arr,tree,node*2,start,mid) + makeTree(arr,tree,node*2+1,mid+1,end);
+}
+makeTree(array,tree,1,0,array.length-1);
+
+const update = (tree,node,start,end,index,diff) =>{
+    if(index < start || index > end) return;
+    tree[node] +=diff;
+    if(start !== end){
+        const mid = (start+end) / 2 >> 0;
+        update(tree,node*2,start,mid,index,diff);
+        update(tree,node*2+1,mid+1,end,index,diff);
+    }
+}
+// update(tree,1,0,array.length-1,4,10-array[4]);
+
+const sum = (tree,node,left,right,start,end) =>{
+    if(left > end || right < start) return 0;
+    if(left <=start && end <=right) return tree[node];
+    const mid = (start+end) / 2 >>0;
+    return sum(tree,node*2,left,right,start,mid) + sum(tree,node*2+1,left,right,mid+1,end);
+    
+}
+console.log(sum(tree,1,8,11,0,array.length-1))

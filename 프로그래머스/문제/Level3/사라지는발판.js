@@ -44,7 +44,7 @@ const solution = (board,aloc,bloc) =>{
         if(bPos[1] === -1) return [false,0];
         return bPos;
     }
-    return answer = A(ay,ax,by,bx,board);
+    return A(ay,ax,by,bx,board)[1];
 }
 console.log(solution([[1, 1, 1], [1, 1, 1], [1, 1, 1]],[1,0],[1,2]))
 // console.log((solution([[1, 1, 1], [1, 0, 1], [1, 1, 1]],[1,0],[1,2])))
