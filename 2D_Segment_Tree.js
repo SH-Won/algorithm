@@ -24,7 +24,7 @@ class Seg{
     }
     update(y,x,value){
         const {N,M} = this;
-        this.tree[y+N][x+M] +=value;
+        this.tree[y+N][x+M] =value;
         for(let i=x+M; i>1; i>>=1) this.tree[y+N][i>>1] = this.tree[y+N][i] + this.tree[y+M][i^1];
         for(y+=N; y>1; y>>=1){
             
