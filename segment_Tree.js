@@ -56,7 +56,9 @@ class Seg{
         return result;
     }
 }
-const seg = new Seg([5,4,3,2,1,0]);
-seg.init();
-const rangeSum = seg.query(3,5);
-console.log(rangeSum);
+// const seg = new Seg([5,4,3,2,1,0]);
+// seg.init();
+// const rangeSum = seg.query(3,5);
+// console.log(rangeSum);
+
+
