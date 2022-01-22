@@ -16,7 +16,6 @@ class Seg{
         const {n} = this;
         this.tree[index+n] = value;
         for(index+=n; index>1; index>>=1) this.tree[index>>1] = this.tree[index] + this.tree[index^1];
-
     }
     query(left,right){
         const {n} = this;
@@ -38,7 +37,7 @@ const solution = (input) =>{
     for(let i=1+N; i<N+M+K+1; i++){
         const [a,b,c] = input[i].split(' ').map(Number);
         if(a === 1) seg.update(b-1,BigInt(c));
-        else answer += `${parseInt(seg.query(b-1,c-1))}\n`;
+        else answer += `${(seg.query(b-1,c-1))}\n`;
     }
     console.log(answer.trim());
 }
