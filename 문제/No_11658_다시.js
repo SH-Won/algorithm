@@ -41,7 +41,7 @@ class Seg{
         for(let i=x+n; i>1; i>>=1) this.tree[y+n][i>>1] = this.tree[y+n][i] + this.tree[y+n][i^1];
         for(y+=n; y>1; y>>=1){
             for(let i=x+n; i>0; i>>=1){
-                this.tree[y>>1][x] = this.tree[y][x] + this.tree[y^1][x];
+                this.tree[y>>1][i] = this.tree[y][i] + this.tree[y^1][i];
             }
         }
     }

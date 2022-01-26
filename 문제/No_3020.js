@@ -1,7 +1,7 @@
 // const input = ['6 7','1','5','3','3','5','1']
-const input = ['14 5','1','3','4','2','2','4','3','4','3','3','3','2','3','3']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['14 5','1','3','4','2','2','4','3','4','3','3','3','2','3','3']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = (input) =>{
     const [N,H] = input[0].split(' ').map(Number);
