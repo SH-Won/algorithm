@@ -1,9 +1,9 @@
 // const input = ['4 6','0 0 0 0 0 0','0 0 0 0 0 0','0 0 1 0 6 0','0 0 0 0 0 0'];
 // const input = ['6 6','0 0 0 0 0 0','0 2 0 0 0 0','0 0 0 0 6 0','0 6 0 0 2 0','0 0 0 0 0 0','0 0 0 0 0 5']
 // const input = ['6 6','1 0 0 0 0 0','0 1 0 0 0 0','0 0 1 0 0 0','0 0 0 1 0 0','0 0 0 0 1 0','0 0 0 0 0 1']
-// const input = ['6 6','1 0 0 0 0 0','0 1 0 0 0 0','0 0 1 5 0 0','0 0 5 1 0 0','0 0 0 0 1 0','0 0 0 0 0 1']
-const fs = require('fs');
-const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const input = ['6 6','1 0 0 0 0 0','0 1 0 0 0 0','0 0 1 5 0 0','0 0 5 1 0 0','0 0 0 0 1 0','0 0 0 0 0 1']
+// const fs = require('fs');
+// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[0,-1,0,1],[-1,0,1,0]];
 const CCTV = [
     null,
@@ -13,19 +13,31 @@ const CCTV = [
     [[0,1,2],[1,2,3],[2,3,0],[3,0,1]],
     [[0,1,2,3]],
 ]
-const combination = (count,arr,map) =>{
-    const result = [];
-    const [y,x] = arr[count];
-    const length = CCTV[map[y][x]].length;
-    const direction = Array(length).fill().map((v,i) => i);
-    if(count === arr.length - 1) return direction.map(el => [el]); 
-    direction.forEach( num =>{
-        const combi = combination(count+1,arr,map);
-        const attach = combi.map(com => [num,...com]);
-        result.push(...attach);
-    })
-    return result;
-}
+// const combination = (count,arr,map) =>{
+//     const result = [];
+//     const [y,x] = arr[count];
+//     const length = CCTV[map[y][x]].length;
+//     const direction = Array(length).fill().map((v,i) => i);
+//     if(count === arr.length - 1) return direction.map(el => [el]); 
+//     direction.forEach( num =>{
+//         const combi = combination(count+1,arr,map);
+//         const attach = combi.map(com => [num,...com]);
+//         result.push(...attach);
+//     })
+//     return result;
+// }
+// const combination = (count,arr,map) =>{
+//     const result = [];
+//     const [y,x] = arr[count];
+//     const length = CCTV[map[y][x]].length;
+//     if(count === arr.length-1) return Array.from({length},(_,i)=> [i]); 
+//     for(let i=0; i<length; i++){
+//         const combi = combination(count+1,arr,map);
+//         const attach = combi.map(com => [i,...com]);
+//         result.push(...attach);
+//     }
+//     return result;
+// }
 const getWatchCount = (cctvPos,direction,map) =>{
     let max = 0;
     let visited = Array.from({length:map.length},()=>Array(map[0].length).fill(false));
@@ -64,8 +76,20 @@ const solution = (input) =>{
             else if(map[y][x] !== 6) cctvPos.push([y,x]);
         }
     }
+    const combination = (count) =>{
+        const result = [];
+        const [y,x] = cctvPos[count];
+        const length = CCTV[map[y][x]].length;
+        if(count === cctvPos.length-1) return Array.from({length},(_,i)=> [i]); 
+        for(let i=0; i<length; i++){
+            const combi = combination(count+1);
+            const attach = combi.map(com => [i,...com]);
+            result.push(...attach);
+        }
+        return result;
+    }
     if(!cctvPos.length) return console.log(unWatch);
-    const direction = combination(0,cctvPos,map);
+    const direction = combination(0);
     const watch = getWatchCount(cctvPos,direction,map);
     console.log(unWatch - watch);
 }

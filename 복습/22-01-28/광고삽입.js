@@ -1,6 +1,6 @@
 const getDigitalTime = (second) =>{
     const h = second / 3600 >> 0;
-    const m = (second / 60) % 60 ;
+    const m = (second / 60 >> 0) % 60 ;
     const s = second % 60 ;
     return `${h < 10 ? '0'+h : h}:${m < 10 ? '0'+m : m}:${s < 10 ? '0'+s : s}` 
 }
@@ -30,4 +30,5 @@ const solution = (play_time,adv_time,logs)=>{
     }
     return getDigitalTime(advStart);
 }
+
 

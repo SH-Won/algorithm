@@ -36,3 +36,4 @@ const solution = (key,lock) => {
    }
    return false;
 }
+

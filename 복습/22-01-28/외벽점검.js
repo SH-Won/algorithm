@@ -14,9 +14,8 @@ const solution = (n,weak,dist) =>{
     const len = weak.length;
     const weakPoints = Array.from({length:2*len -1},(_,i)=> i < len ? weak[i] : weak[i-len]+n);
     dist.sort((a,b) => b-a);
-    for(let count=1; count<dist.length; count++){
+    for(let count=1; count<=dist.length; count++){
         const friends = getPermutation(count,dist);
-        console.log(friends);
         for(let i=0; i<friends.length; i++){
             const friendArr = friends[i];
             for(let j=0; j<len; j++){
