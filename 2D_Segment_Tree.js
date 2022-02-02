@@ -38,7 +38,7 @@ class Seg{
         let sum = 0;
         for(x1+=M , x2+=M+1; x1<x2; x1>>=1 , x2>>=1){
             if(x1 & 1) sum+= this.tree[y][x1++];
-            if(x2 & 2) sum+= this.tree[y][--x2];
+            if(x2 & 1) sum+= this.tree[y][--x2];
         }
         return sum;
     }
