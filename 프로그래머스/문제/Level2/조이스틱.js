@@ -25,6 +25,7 @@ function solution(name) {
         answer+=diff>13 ? 26-diff:diff;
     }
     let minMove=name.length-1;
+    // JAAJDA
     for(let i=1;i<name.length;i++){
         if(name[i]==='A'){
             for(var j=i+1;j<name.length;j++){
