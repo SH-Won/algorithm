@@ -1,4 +1,4 @@
-const input = ['5 6','1','5 1 1','1 2 2','2 4 5','2 3 4','3 4 6','1 3 3']
+// const input = ['5 6','1','5 1 1','1 2 2','2 4 5','2 3 4','3 4 6','1 3 3']
 // const input = ['2 2','1','1 2 2','1 2 3']
 // const input = ['2 2','1','1 2 1','1 2 2']
 // const input = ['4 1','1','4 2 3']
@@ -7,6 +7,17 @@ const input = ['5 6','1','5 1 1','1 2 2','2 4 5','2 3 4','3 4 6','1 3 3']
 // const input = ['2 4','2','1 2 1','1 2 2','1 2 3','1 2 4']
 // const input = ['5 6','1','5 1 1','1 2 2','1 3 4','2 3 1','2 4 11','3 4 6'] // 0 2 3 9 INF;
 // const input = ['4 5','1','1 3 2','3 2 4','1 4 2','4 2 1','1 3 5'] // 0 3 2 2
+
+// const input = ['3 2','3','1 3 10','2 1 4'] // INF INF 0;
+// const input = ['2 1','2','2 1 1']; // 1 0
+// const input = ['4 8','1','1 2 3','2 1 5','4 3 4','2 3 10','1 3 10','2 4 1','3 1 1','1 2 2'] //0 2 7 3
+// const input = ['2 4','1','1 2 1','1 2 2','1 2 5','1 2 10'] // 0 1
+// const input = ['2 3','2','1 2 1','1 2 1','1 2 1']; //INF 0
+// const input = ['3 3','2','2 1 4','2 1 4','2 1 4'] // 4 0 INF
+// const input = ['5 8','2','1 2 3','2 1 5','4 3 4','2 3 10','1 3 10','2 4 1','3 1 1','1 2 2']
+// const input = ['4 6','2','3 1 2','1 4 2','4 3 2','3 4 2','2 3 2','2 4 2']; // 4 0 2 2
+// const input = ['3 4','2','1 3 5','2 1 9','2 3 3','2 1 10'];  // 9 0 3
+// const input = ['12 20','1','1 2 1','1 3 1','1 4 2','1 5 2','1 6 2','1 7 2','1 8 2','1 9 3','1 10 4','1 11 5','2 11 5','3 11 4','4 11 3','5 11 2','6 11 1','7 10 1','8 10 2','9 10 3','10 11 4','1 11 10']; // 0 1 1 2 2 2 2 2 3 3 3 INF;
 
 // const fs = require('fs');
 // const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
@@ -24,7 +35,9 @@ function Graph(size){
          const v2Node = new Node(v2,w);
          let graph1 = this.graph[v1];
         //  let graph2 = this.graph[v2];
-         if(graph1.link === null) graph1.link = v2Node;
+         if(graph1.link === null){
+             graph1.link = v2Node;
+            }
          else{
              while(graph1.link !== null){
                  graph1 = graph1.link;
@@ -47,7 +60,7 @@ function Graph(size){
 const heapPush = (h,g,move,visited) =>{
     while(g.link !== null){
         g = g.link;
-        // if(!visited[g.vertex]){
+        if(!visited[g.vertex]){
             if(!h.length) h.push({v:g.vertex, w:g.weight+move});
             else{
                 if(h[0].w > g.weight){
@@ -59,7 +72,7 @@ const heapPush = (h,g,move,visited) =>{
                     h.push({v:g.vertex, w:g.weight+move});
                 }
             }
-        // }
+          }
     }
 }
 const heapPop = h =>{
@@ -98,15 +111,15 @@ const dijkstra = (start,graph) =>{
         g = heapPop(heap);
         // if(!visited[g.v]){
         //     visited[g.v] = true;
-        //     move = g.w;
-        //     dist[g.v] = move;
-        //     heapPush(heap,graph[g.v],move,visited);
+            // move = g.w;
+            // dist[g.v] = move;
+            // heapPush(heap,graph[g.v],move,visited);
         // }
-        move = g.w;
-        if(dist[g.v] > move){
-            dist[g.v] = move;
-            heapPush(heap,graph[g.v],move,visited);
+        if(dist[g.v] > g.w){
+            dist[g.v] = g.w;
+            heapPush(heap,graph[g.v],g.w,visited);
         }
+       
     }
     return dist;
 }
@@ -125,6 +138,7 @@ const solution = input =>{
         if(dist[i] === Infinity) answer+='INF\n';
         else answer+=`${dist[i]}\n`;
     }
+    
     console.log(answer.trim());
 }
 solution(input);
