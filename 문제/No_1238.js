@@ -97,3 +97,4 @@ const solution = input =>{
     console.log(answer);
 }
 solution(input);
+// N * logM
