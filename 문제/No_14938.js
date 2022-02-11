@@ -40,8 +40,8 @@ class Heap{
             const rightChildIndex = index*2 + 2;
             const smallerChildIndex = this.heap[rightChildIndex] && this.heap[rightChildIndex].distance < this.heap[leftChildIndex].distance 
                ?  rightChildIndex : leftChildIndex;
-            if(this.heap[smallerChildIndex] <= rootNode.distance){
-                this.heap[index] = thisheap[smallerChildIndex];
+            if(this.heap[smallerChildIndex].distance <= rootNode.distance){
+                this.heap[index] = this.heap[smallerChildIndex];
                 index = smallerChildIndex;
             }else break;
         }
