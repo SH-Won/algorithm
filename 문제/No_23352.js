@@ -1,8 +1,8 @@
 // const input = ['5 5','1 2 3 4 5','0 0 4 0 0','0 0 5 0 0','8 7 6 7 8','9 0 7 0 0']
 // const input = ['2 2','1 2','3 4']
-const input = ['5 6','2 0 7 4 0 2','0 8 5 0 3 0','6 9 5 7 7 2','6 9 3 9 9 7','0 8 7 4 0 3']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['5 6','2 0 7 4 0 2','0 8 5 0 3 0','6 9 5 7 7 2','6 9 3 9 9 7','0 8 7 4 0 3']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const escapeRoom = (y,x,map) =>{
     const room = map[y][x];

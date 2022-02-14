@@ -1,8 +1,8 @@
-const input = ['5 2 2','1','2','3','4','5','1 3 0','2 2 5','1 3 6','2 2 5'];
+// const input = ['5 2 2','1','2','3','4','5','1 3 0','2 2 5','1 3 6','2 2 5'];
 // const input = ['5 2 2','1','2','3','4','5','1 3 6','2 2 5','1 5 2','2 3 5']
 // const input = ['4 1 2','1000000','1000000','1000000','1000000','2 1 4','1 2 1','2 1 4']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 class Seg{
     constructor(N){

@@ -1,8 +1,8 @@
 // const input = ['3 3','011','111','110'];
 // const input = ['4 2','0001','1000']
 const input = ['6 6','001111','010000','001111','110001','011010','100010']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const bfs = (map) =>{
     const [N,M] = [map.length, map[0].length]

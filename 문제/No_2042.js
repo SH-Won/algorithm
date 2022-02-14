@@ -1,6 +1,6 @@
-const input = ['5 2 2','1','2','3','4','5','1 3 6','2 2 5','1 5 2','2 3 5']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['5 2 2','1','2','3','4','5','1 3 6','2 2 5','1 5 2','2 3 5']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 class Seg{
     constructor(n){

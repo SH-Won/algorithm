@@ -1,4 +1,4 @@
-const input = ['5','8','1 2 2','1 3 3','1 4 1','1 5 10','2 4 2','3 4 1','3 5 1','4 5 3','1 5']
+// const input = ['5','8','1 2 2','1 3 3','1 4 1','1 5 10','2 4 2','3 4 1','3 5 1','4 5 3','1 5']
 // const input = [
 // '7',
 // '12',
@@ -16,8 +16,8 @@ const input = ['5','8','1 2 2','1 3 3','1 4 1','1 5 10','2 4 2','3 4 1','3 5 1',
 // '7 4 4',
 // '1 2'
 // ]   // '1 4' ans 11 '1 2' ans 5 '1 3' ans 9
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 class Heap{
     constructor(){

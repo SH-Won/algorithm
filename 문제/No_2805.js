@@ -1,7 +1,7 @@
 // const input = ['4 7','20 15 10 17']
-const input = ['5 20','4 42 40 26 46']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['5 20','4 42 40 26 46']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const binarySearch = (M,tree) =>{
     let left = 0;

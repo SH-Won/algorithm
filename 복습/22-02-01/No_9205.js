@@ -2,10 +2,10 @@
 // const input = ['1','2','0 0','-450 -250','-600 500','-600 1000'];
 // const input = ['1','2','0 0','1000 5','2000 10','3000 15']; //ans sad
 // const input = ['3','0','1000 1000','1000 1001','1','0 0','1000 0','0 2000','2','0 0','10000 0','0 1000','0 2000'] //ans happy sad happy
-const input = ['1','1','0 0','9999 9999','0 1'] //ans happy;
+// const input = ['1','1','0 0','9999 9999','0 1'] //ans happy;
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getDistance = (a,b) =>{
     return Math.abs(a[0] - b[0]) + Math.abs(a[1] - b[1]);

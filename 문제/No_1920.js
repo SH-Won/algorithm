@@ -1,7 +1,7 @@
 // const input = ['5','4 1 5 2 3','5','1 3 7 9 5']
-const input = ['5','1 2 3 4 5','5','5 5 5 5 5']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['5','1 2 3 4 5','5','5 5 5 5 5']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const binarySearch = (number,N,A) =>{
     let left = 0;

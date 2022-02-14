@@ -108,10 +108,10 @@
 // }
 // solution(input);
 
-const input = ['2','3 2 2','2 1 5','3 2 5','3 3 1','2 1 2','3 1 8','3 2 4']
+// const input = ['2','3 2 2','2 1 5','3 2 5','3 3 1','2 1 2','3 1 8','3 2 4']
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class Heap{
     constructor(){
         this.heap = [];
