@@ -1,6 +1,6 @@
-const input = ['8','11100110','11010010','10011010','11101100','01000111','00110001','11011000','11000111']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['8','11100110','11010010','10011010','11101100','01000111','00110001','11011000','11000111']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMinChangeCount = (map) =>{
     const n = map.length;

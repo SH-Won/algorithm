@@ -1,6 +1,5 @@
-// const input = ['4 4 2 1','1 2','1 3','2 3','2 4']
-// const input = ['4 3 2 1','1 2','3 4','1 4']
-const input = ['4 4 1 1','1 2','1 3','2 3','2 4']
+// const input = ['6 7 4','1 2 1','1 3 1','2 3 10','3 4 1','3 5 2','4 5 1','5 6 1'];
+const input = ['4 3 3','1 2 1','2 3 1','2 4 1']
 // const fs = require('fs');
 // const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class Heap{
@@ -77,17 +76,16 @@ const dijkstra = (start,edge) =>{
     return dist;
 }
 const solution = input =>{
-    const [N,M,K,X] = input[0].split(' ').map(Number);
-    const edge = Array.from({length:N+1},()=>[]);
-    for(let i=1; i<1+M; i++){
-        const [from,to] = input[i].split(' ').map(Number);
-        edge[from].push({to,distance:1});
+    const [V,E,P] = input[0].split(' ').map(Number);
+    const edge = Array.from({length:V+1},()=>[]);
+    for(let i=1; i<1+E; i++){
+        const [from,to,distance] = input[i].split(' ').map(Number);
+        edge[from].push({to,distance});
+        edge[to].push({to:from, distance});
     }
-    const dist = dijkstra(X,edge);
-    let answer = '';
-    for(let i=1; i<=N; i++){
-        if(dist[i] === K) answer+=`${i}\n`
-    }
-    answer.length === 0 ? console.log(-1) : console.log(answer.trim())
+    const minjun = dijkstra(1,edge);
+    const gunwoo = dijkstra(P,edge);
+    
+    minjun[V] === minjun[P] + gunwoo[V] ? console.log('SAVE HIM') : console.log('GOOD BYE');
 }
 solution(input);

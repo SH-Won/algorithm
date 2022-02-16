@@ -1,6 +1,4 @@
-// const input = ['4 4 2 1','1 2','1 3','2 3','2 4']
-// const input = ['4 3 2 1','1 2','3 4','1 4']
-const input = ['4 4 1 1','1 2','1 3','2 3','2 4']
+const input = ['8 11','1 2 2','1 4 1','2 4 2','2 3 1','2 7 8','3 7 3','4 5 2','4 6 1','6 7 6','6 8 4','7 8 2','2 6','1 5','1 4','8']
 // const fs = require('fs');
 // const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class Heap{
@@ -57,18 +55,18 @@ class PriorityQueue extends Heap{
     pop = () => this.remove();
     isEmpty = () => this.heap.length <= 0;
 }
-const dijkstra = (start,edge) =>{
+const dijkstra = (list,edge,limit) =>{
     const dist = Array(edge.length).fill(Infinity);
-    dist[start] = 0;
+
     const pq = new PriorityQueue();
-    pq.push(start,0);
+    list.forEach(el => (dist[el] = 0, pq.push(el,0)));
     while(!pq.isEmpty()){
         const cur = pq.pop();
         if(cur === undefined || cur.distance > dist[cur.to]) continue;
         for(let i=0; i<edge[cur.to].length; i++){
             const next = edge[cur.to][i];
             const nd = next.distance + cur.distance;
-            if(dist[next.to] > nd){
+            if(dist[next.to] > nd && nd <= limit){
                 dist[next.to] = nd;
                 pq.push(next.to, nd);
             }
@@ -77,17 +75,26 @@ const dijkstra = (start,edge) =>{
     return dist;
 }
 const solution = input =>{
-    const [N,M,K,X] = input[0].split(' ').map(Number);
-    const edge = Array.from({length:N+1},()=>[]);
-    for(let i=1; i<1+M; i++){
-        const [from,to] = input[i].split(' ').map(Number);
-        edge[from].push({to,distance:1});
+    const [V,E] = input[0].split(' ').map(Number);
+    const edge = Array.from({length:V+1},()=>[]);
+    const [M,x] = input[E+1].split(' ').map(Number);
+    const mac = input[E+2].split(' ').map(Number);
+    const [S,y] = input[E+3].split(' ').map(Number);
+    const star = input[E+4].split(' ').map(Number);
+    for(let i=1; i<1+E; i++){
+        const [from,to,distance] = input[i].split(' ').map(Number);
+        edge[from].push({to,distance});
+        edge[to].push({to:from, distance});
     }
-    const dist = dijkstra(X,edge);
-    let answer = '';
-    for(let i=1; i<=N; i++){
-        if(dist[i] === K) answer+=`${i}\n`
+    const mDist = dijkstra(mac,edge,x);
+    const sDist = dijkstra(star,edge,y);
+
+    console.log(mDist);
+    let min = Infinity;
+    for(let i=1; i<=V; i++){
+        if(!mDist[i] || !sDist[i] || mDist[i] ===Infinity || sDist[i] === Infinity) continue;
+        min = Math.min(min, mDist[i] + sDist[i]);
     }
-    answer.length === 0 ? console.log(-1) : console.log(answer.trim())
+     min === Infinity ? console.log(-1) : console.log(min);
 }
 solution(input);

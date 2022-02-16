@@ -1,6 +1,6 @@
-const input = ['6 8','4 5 3','2 4 0','4 1 4','2 1 1','5 6 1','3 6 2','3 2 6','3 4 4']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['6 8','4 5 3','2 4 0','4 1 4','2 1 1','5 6 1','3 6 2','3 2 6','3 4 4']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class Heap{
     constructor(){
         this.heap = [];
