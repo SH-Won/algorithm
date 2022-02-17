@@ -89,7 +89,6 @@ const solution = input =>{
     const mDist = dijkstra(mac,edge,x);
     const sDist = dijkstra(star,edge,y);
 
-    console.log(mDist);
     let min = Infinity;
     for(let i=1; i<=V; i++){
         if(!mDist[i] || !sDist[i] || mDist[i] ===Infinity || sDist[i] === Infinity) continue;

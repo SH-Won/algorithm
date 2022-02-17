@@ -1,7 +1,7 @@
 // const input = ['4','1 1 1 1','1 1 1 1','1 1 1 1','1 1 1 1'];
-const input = ['3','3 4 3','2 5 2','5 2 2']
-// const fs =require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['3','3 4 3','2 5 2','5 2 2']
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const isPossible = (slope,map) =>{
     const n = map.length;
     const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
