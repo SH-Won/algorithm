@@ -1,24 +1,79 @@
-const input = ['1','500 0 0 500','1','0 0 0 0']
-//const input = ['0','0'];
-//const input = ['2','0 0 250 250','250 250 500 500','2','0 251 249 500','251 0 500 249'];
-//const input = ['2','0 0 250 250','250 250 500 500','2','0 250 250 500','250 0 500 250']
+// const input = ['1','500 0 0 500','1','0 0 0 0']
+// const input = ['0','0'];
+// const input = ['2','0 0 250 250','250 250 500 500','2','0 251 249 500','251 0 500 249'];
+const input = ['2','0 0 250 250','250 250 500 500','2','0 250 250 500','250 0 500 250']
 //const fs = require('fs');
 //const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-// let index = 0;
-// const N = +input[index++];
-// let [ty1,tx1,ty2,tx2] = [Infinity,Infinity,0,0];
-// for(let i=0; i<N; i++){
+class PriorityQueue{
+    constructor(){
+        this.queue = [];
+    }
+    push = (to,life) =>{
+        this.queue.push({to,life});
+        this.up();
+    }
+    up = () =>{
+        let index = this.queue.length -1;
+        const inserted = this.queue[index];
+        while(index > 0){
+            const parent = Math.floor((index-1) /2);
+            if(this.queue[parent].life > inserted.life){
+                this.queue[index] = this.queue[parent];
+                index = parent;
+            }else break;
+        }
+        this.queue[index] = inserted;
+    }
+    pop = () =>{
+        const root = this.queue[0];
+        if(this.queue.length <= 0) return undefined;
+        if(this.queue.length === 1) this.queue = [];
+        else{
+            this.queue[0] = this.queue.pop();
+            this.down();
+        }
+        return root;
+    }
+    down = () =>{
+        let index = 0;
+        const root = this.queue[index];
+        while((index*2 + 1) <this.queue.length){
+            const leftChild = index*2 + 1;
+            const rightChild = index*2 + 2;
+            const smallerChild = this.queue[rightChild] && this.queue[rightChild].life < this.queue[leftChild].life
+             ?  rightChild : leftChild;
+            if(this.queue[smallerChild].life <= root.life){
+                this.queue[index] = this.queue[smallerChild];
+                index = smallerChild;
+            }else break;
+        }
+        this.queue[index] = root;
+    }
+    isEmpty = () => this.queue.length <=0;
+}
 
-// }
-// const M = +input[2];
-// const [dy1,dx1,dy2,dx2] = input[3].split(' ').map(Number);
-const isValidPos = (y,x) => (y>=0 && x>=0 && y<501 && x<501);
-// const [tMinY,tMinX,tMaxY,tMaxX] = [Math.min(ty1,ty2),Math.min(tx1,tx2),Math.max(ty1,ty2),Math.max(tx1,tx2)];
-// const [dMinY,dMinX,dMaxY,dMaxX] = [Math.min(dy1,dy2),Math.min(dx1,dx2),Math.max(dy1,dy2),Math.max(dx1,dx2)];
-// const isDeathPos = (y,x) => (y>=dMinY && x>=dMinX && y<=dMaxY && x<=dMaxX);
-// const isDangerousPos = (y,x) => (y>=tMinY && x>=tMinX && y<=tMaxY && x<=tMaxX);
-const dy = [1,-1,0,0];
-const dx = [0,0,1,-1];
+const dijkstra = (area) =>{
+    const lifeCount = Array.from({length:501},()=>Array(501).fill(Infinity));
+    const pq = new PriorityQueue();
+    const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
+    const isValidPos = (y,x) => (y>=0 && x>=0 && y<501 && x<501);
+    lifeCount[0][0] = 0;
+    pq.push([0,0],0);
+    while(!pq.isEmpty()){
+        const cur = pq.pop();
+        const [y,x] = cur.to;
+        if(cur === undefined || cur.life > lifeCount[y][x]) continue;
+        for(let i=0; i<4; i++){
+            const [ny,nx] = [y+dy[i],x+dx[i]];
+            if(!isValidPos(ny,nx) || area[ny][nx] === 2) continue;
+            if(lifeCount[ny][nx] > cur.life + area[ny][nx]){
+                lifeCount[ny][nx] = cur.life + area[ny][nx];
+                pq.push([ny,nx], lifeCount[ny][nx]);
+            }
+        }
+    }
+    return lifeCount[500][500];
+}
 
 
 const solution = () =>{
@@ -44,27 +99,7 @@ const solution = () =>{
             }
         }
     }
-    let life = Array.from({length:501},()=>Array(501).fill(Infinity));
-    life[0][0] = 0;
-    let queue =[[0,0,0]];
-    while(queue.length){
-        const [y,x,count] = queue.shift();
-
-        if(y === 500 && x === 500) return console.log(count);
-        for(let i=0; i<4; i++){
-            const [ny,nx] = [y+dy[i],x+dx[i]];
-            if(!isValidPos(ny,nx) || map[ny][nx] === 2) continue;
-            if(map[ny][nx] ===1 && life[ny][nx] > count+1){
-                life[ny][nx] = count+1;
-                queue.push([ny,nx,count+1])
-            }
-            else if(map[ny][nx] === 0 && life[ny][nx] > count){
-                life[ny][nx] = count;
-                queue.push([ny,nx,count]);
-            }
-            
-        }
-    }
-    return console.log(-1);
+    const minLifeCount = dijkstra(map);
+    minLifeCount === Infinity ? console.log(-1) : console.log(minLifeCount);
 }
 solution();
