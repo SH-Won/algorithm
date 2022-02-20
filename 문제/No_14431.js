@@ -1,8 +1,8 @@
-console.log(Math.sqrt((6000**2 + 6000**2)) >> 0)
-const input = ['1 2 5 4','2','4 1','6 2']
+// console.log(Math.sqrt((6000**2 + 6000**2)) >> 0)
+// const input = ['1 2 5 4','2','4 1','6 2']
 // const input = ['1 2 5 4','0']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class PriorityQueue{
     constructor(){
         this.queue = [];

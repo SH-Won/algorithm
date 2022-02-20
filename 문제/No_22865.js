@@ -87,4 +87,3 @@ const solution = input =>{
     console.log(answer);
 }
 solution(input);
-console.log(1-Math.pow(0.995,274))

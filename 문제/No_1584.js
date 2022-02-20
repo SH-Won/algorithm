@@ -1,9 +1,9 @@
 // const input = ['1','500 0 0 500','1','0 0 0 0']
 // const input = ['0','0'];
 // const input = ['2','0 0 250 250','250 250 500 500','2','0 251 249 500','251 0 500 249'];
-const input = ['2','0 0 250 250','250 250 500 500','2','0 250 250 500','250 0 500 250']
-//const fs = require('fs');
-//const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['2','0 0 250 250','250 250 500 500','2','0 250 250 500','250 0 500 250']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class PriorityQueue{
     constructor(){
         this.queue = [];
