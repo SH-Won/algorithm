@@ -99,3 +99,4 @@ const solution = input =>{
     console.log(maxHeight);
 }
 solution(input);
+console.log(Math.sqrt(2) + 2);
