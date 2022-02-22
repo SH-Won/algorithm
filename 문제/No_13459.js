@@ -1,0 +1,72 @@
+// const input = ['5 5','#####','#..B#','#.#.#','#RO.#','#####']
+// const input = ['7 7','#######','#...RB#','#.#####','#.....#','#####.#','#O....#','#######']
+// const input = ['7 7','#######','#..R#B#','#.#####','#.....#','#####.#','#O....#','#######']
+// const input = [
+// '10 10',
+// '##########',
+// '#R#...##B#',
+// '#...#.##.#',
+// '#####.##.#',
+// '#......#.#',
+// '#.######.#',
+// '#.#....#.#',
+// '#.#.#.#..#',
+// '#...#.O#.#',
+// '##########'
+// ]
+// const input = ['3 7','#######','#R.O.B#','#######']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+
+const isPossible = (red,blue,map) =>{
+    const [LEFT,RIGHT,UP,DOWN] = [0,1,2,3]
+    const [dy,dx] = [[0,0,-1,1],[-1,1,0,0]];
+    let check = Array.from({length:4},()=>Array(2).fill(false));
+    let queue = [[...red,...blue,0]];
+    while(queue.length){
+        const [ry,rx,by,bx,count] = queue.shift();
+        if(count >= 10) return console.log(0);
+        for(let i=0; i<4; i++){
+            let marble = [[ry,rx],[by,bx]];
+            check[i].fill(false);
+            for(let j=0; j<marble.length; j++){
+                let [ny,nx] = [marble[j][0]+dy[i],marble[j][1]+dx[i]];
+                while(map[ny][nx] !== '#'){
+                    if(map[ny][nx] === 'O'){
+                        check[i][j] = true;
+                        break;
+                    }
+                    ny+=dy[i], nx+=dx[i];
+                }
+                marble[j] = [ny-dy[i],nx-dx[i]];
+            }
+            if(check[i].some(el => el)){
+                if(!check[i][1]) return console.log(1);
+                continue; 
+            }
+            if(marble[0][0] === marble[1][0] && marble[0][1] === marble[1][1]){
+                if(i === LEFT) rx < bx ? marble[1][1]++ : marble[0][1]++;
+                else if(i === RIGHT) rx < bx ? marble[0][1]-- : marble[1][1]--;
+                else if(i === UP) ry < by ? marble[1][0]++ : marble[0][0]++;
+                else if(i === DOWN) ry < by ? marble[0][0]-- : marble[1][0]--;
+            }
+            if(marble[0][0] !== ry || marble[0][1] !== rx || marble[1][0] !== by || marble[1][1] !== bx){
+                queue.push([...marble[0],...marble[1],count+1]);
+            }
+        }
+    }
+    console.log(0);
+}
+const solution = input =>{
+    const [N,M] = input[0].split(' ').map(Number);
+    const map = Array.from({length:N},(_,i)=> input[i+1].split(''));
+    let red , blue;
+    for(let y=1; y<N-1; y++){
+        for(let x=1; x<M-1; x++){
+            if(map[y][x] === 'R') red = [y,x];
+            else if (map[y][x] ==='B') blue = [y,x];
+        }
+    }
+    return isPossible(red,blue,map);
+}
+solution(input);
