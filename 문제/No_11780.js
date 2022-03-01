@@ -1,6 +1,7 @@
+const input = ['5','14','1 2 2','1 3 3','1 4 1','1 5 10','2 4 2','3 4 1','3 5 1','4 5 3','3 5 10','3 1 8','1 4 2','5 1 7','3 4 2','5 2 4'];
+
 // const fs = require('fs');
 // const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-const input = ['5','14','1 2 2','1 3 3','1 4 1','1 5 10','2 4 2','3 4 1','3 5 1','4 5 3','3 5 10','3 1 8','1 4 2','5 1 7','3 4 2','5 2 4'];
 const solution = input =>{
     const n = +input[0];
     const m = +input[1];
@@ -26,7 +27,11 @@ const solution = input =>{
     }
     let answer = {dist:'', path:''};
     for(let i=1; i<=n; i++){
-        answer.dist +=`${dist[i].slice(1).join(' ')}\n`;
+        for(let j=1; j<=n; j++){
+            if(dist[i][j] === Infinity) answer.dist+='0 ';
+            else answer.dist+=`${dist[i][j]} `
+        }
+        answer.dist+='\n';
     }
     for(let i=1; i<=n; i++){
         for(let j=1; j<=n; j++){
