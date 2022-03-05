@@ -7,15 +7,15 @@
 // '0111',
 // '0000',
 // ]
-const input = [
-'6 4 2',
-'0100',
-'1110',
-'1000',
-'0000',
-'0111',
-'0000'
-]
+// const input = [
+// '6 4 2',
+// '0100',
+// '1110',
+// '1000',
+// '0000',
+// '0111',
+// '0000'
+// ]
 // const input = [
 // '4 4 3',
 // '0111',
@@ -33,9 +33,9 @@ const dx = [0,0,1,-1];
 const isValidPos = (y,x) => (y>=0 && x>=0 && y<N && x<M);
 const bfs = () =>{
     visited[0][0][K] = true;
-    let queue = [[0,0,K,1]];
-    while(queue.length){
-        const [y,x,k,time] = queue.shift();
+    let queue = [[0,0,K,1]], idx = 0;
+    while(idx < queue.length){
+        const [y,x,k,time] = queue[idx++];
         if(y === N-1 && x ===M-1) return console.log(time)
         for(let i=0; i<4; i++){
             const [ny,nx] = [y+dy[i],x+dx[i]];
