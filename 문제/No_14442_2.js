@@ -84,9 +84,9 @@ class PriorityQueue{
         while((i*2 + 1) < this.queue.length){
             const leftChild = i*2 + 1;
             const rightChild = i*2 + 2;
-            const smallerChild = this.queue[rightChild] && this.queue[rightChild].time < this.queue[leftChild].time
+            const smallerChild = this.queue[rightChild] && this.queue[rightChild].time > this.queue[leftChild].time
             ? rightChild : leftChild;
-            if(this.queue[smallerChild].time <= root.time){
+            if(this.queue[smallerChild].time > root.time){
                 this.queue[i] = this.queue[smallerChild];
                 i = smallerChild;
             }else break;
@@ -103,21 +103,22 @@ const dijkstra = (map,k) =>{
     times[0][0] = 1;
     const pq = new PriorityQueue();
     pq.push([0,0],1,k);
+    let min = Infinity;
     while(!pq.isEmpty()){
         const cur = pq.pop();
         if(cur === undefined ) continue;
         const [y,x] = cur.pos;
-        // if(cur.time > times[y][x]) continue;
+        if(cur.time > times[y][x]) continue;
         if(y === N-1 && x === M-1){
-            return times[y][x]
+            min = Math.min(min,times[y][x]);
         }
         for(let i=0; i<4; i++){
             const [ny,nx] = [y+dy[i],x+dx[i]];
             if(!isValidPos(ny,nx)) continue;
-            if(times[ny][nx] > cur.time + 1){
+            if(times[ny][nx] > cur.time + 1 ){
                 if(map[ny][nx] === '0'){
-                    times[ny][nx] = cur.time +1 ;
-                    pq.push([ny,nx],cur.time+1,cur.k);
+                    times[ny][nx] = cur.time + 1;
+                    pq.push([ny,nx],cur.time+1,cur.k); 
                 }
                 else if(cur.k && map[ny][nx] === '1'){
                     times[ny][nx] = cur.time + 1;
@@ -126,7 +127,7 @@ const dijkstra = (map,k) =>{
             }
         }
     }
-    return -1;
+    return min === Infinity ? -1 : min;
 }
 const solution = input =>{
     const [N,M,K] = input[0].split(' ').map(Number);
