@@ -18,7 +18,7 @@ const solution = (m,n,board) =>{
                 }
             }
         }
-        console.log(blocks);
+        
         if(blocks.length === 0) break;
         blocks.forEach(([y,x]) => (board[y][x] = '0', board[y][x+1] ='0', board[y+1][x] ='0' , board[y+1][x+1] = '0'));
         downBlock(board);
