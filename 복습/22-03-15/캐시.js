@@ -21,4 +21,4 @@ const solution = (cacheSize,cites) =>{
 // console.log(solution(3,["Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul", "Jeju", "Pangyo", "Seoul"]))
 // console.log(solution(2,	["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"]))
 // console.log(solution(5,["Jeju", "Pangyo", "Seoul", "NewYork", "LA", "SanFrancisco", "Seoul", "Rome", "Paris", "Jeju", "NewYork", "Rome"]))
-console.log(solution(2,["Jeju", "Pangyo", "NewYork", "newyork"]))
+// console.log(solution(2,["Jeju", "Pangyo", "NewYork", "newyork"]))

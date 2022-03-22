@@ -1,8 +1,8 @@
 // const input = ['4 2 0 0 8','0 2','3 4','5 6','7 8','4 4 4 1 3 3 3 2']
 // const input = ['3 3 1 1 9','1 2 3','4 0 5','6 7 8','1 3 2 2 4 4 1 1 3']
 // const input = ['2 2 0 0 16','0 2','3 4','4 4 4 4 1 1 1 1 3 3 3 3 2 2 2 2']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const moveDice = (dice,dir) =>{
     const [U,N,E,W,S,D] = [0,1,2,3,4,5];

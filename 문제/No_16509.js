@@ -1,8 +1,8 @@
 // const input = ['4 2','2 5']
 // const input = ['0 1','8 4']
-const input = ['0 2','1 4']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['0 2','1 4']
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = input =>{
     const [sy,sx] = input[0].split(' ').map(Number);

@@ -29,8 +29,8 @@
 // '##########'
 // ]
 // const input = ['3 10','##########','#.O....RB#','##########']
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMinCount = (red,blue,map) =>{
     const [LEFT,RIGHT,UP,DOWN] = [0,1,2,3]

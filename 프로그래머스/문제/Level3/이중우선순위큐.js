@@ -86,4 +86,4 @@ const solution = operations =>{
 }
 // console.log(solution(["I 16","D 1"]))
 // console.log(solution(["I 7","I 5","I -5","D -1"]))
-console.log(solution(['I 6','I 5','I 2','I 3','I 1','D 1','D -1']));
+// console.log(solution(['I 6','I 5','I 2','I 3','I 1','D 1','D -1']));

@@ -3,8 +3,8 @@
 // const input = ['3 5','0 0 0 2 0']
 // const input = ['5 5','1 0 3 2 4']; // 2
 // const input = ['4 8','3 2 1 2 1 0 3 2'] // 9
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = input =>{
     const [H,W] = input[0].split(' ').map(Number);

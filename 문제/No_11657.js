@@ -8,10 +8,10 @@
 // const input = ['4 5','1 4 3','4 2 4','2 3 -4','3 4 -2','4 3 3']; // -1
 // const input = ['3 2','2 3 -1','3 2 -1'] //  -1 -1
 // const input = ['3 3','1 2 3','2 1 -1000','2 1 5']; //  -1
-const input = ['2 2','1 2 -1','2 1 -1']; // -1
+// const input = ['2 2','1 2 -1','2 1 -1']; // -1
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const bellmanFord = (edge) =>{
     const n = edge.length;

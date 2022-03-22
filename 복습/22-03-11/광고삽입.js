@@ -19,6 +19,7 @@ const solution = (play_time,adv_time,logs) =>{
         const [startTime,endTime] = [transform_time(start),transform_time(end)];
         times[startTime]++ , times[endTime]--; 
     }
+    
     // 누적합
     for(let i=1; i<=playTime; i++) times[i]+=times[i-1];
     for(let i=1; i<=playTime; i++) times[i]+=times[i-1];

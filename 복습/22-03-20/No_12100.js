@@ -44,8 +44,8 @@
 // '128 32 2 4 0 0 0 0 0 0',
 // '0 0 128 0 0 0 0 0 0 0',
 // ] //ans 1024
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMaxBlock = (dirArr,map) =>{
     const [LEFT,RIGHT,UP,DOWN] = [0,1,2,3];

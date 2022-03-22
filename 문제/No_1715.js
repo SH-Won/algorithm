@@ -4,9 +4,9 @@
 // const input = ['4','30','40','50','60']; // 360
 // const input = ['8','30','40','50','20','10','100','60','120'] // 1160;
 // const input = ['8','30','40','50','20','10','100','60','10']; // 860
-const input = ['4','120','40','100','20'] // 500
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = ['4','120','40','100','20'] // 500
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class PriorityQueue{
     constructor(){ // minHeap;
         this.queue = [];
