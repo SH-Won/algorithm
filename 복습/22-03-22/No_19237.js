@@ -1,3 +1,94 @@
+// const input = [
+// '5 4 4',
+// '0 0 0 0 3',
+// '0 2 0 0 0',
+// '1 0 0 0 4',
+// '0 0 0 0 0',
+// '0 0 0 0 0',
+// '4 4 3 1',
+// '2 3 1 4',
+// '4 1 2 3',
+// '3 4 2 1',
+// '4 3 1 2',
+// '2 4 3 1',
+// '2 1 3 4',
+// '3 4 1 2',
+// '4 1 2 3',
+// '4 3 2 1',
+// '1 4 3 2',
+// '1 3 2 4',
+// '3 2 1 4',
+// '3 4 1 2',
+// '3 2 4 1',
+// '1 4 2 3',
+// '1 4 2 3',
+// ]
+// const input = [
+// '4 2 6',
+// '1 0 0 0',
+// '0 0 0 0',
+// '0 0 0 0',
+// '0 0 0 2',
+// '4 3',
+// '1 2 3 4',
+// '2 3 4 1',
+// '3 4 1 2',
+// '4 1 2 3',
+// '1 2 3 4',
+// '2 3 4 1',
+// '3 4 1 2',
+// '4 1 2 3',
+// ]
+// const input = [
+// '5 4 1',
+// '0 0 0 0 3',
+// '0 2 0 0 0',
+// '1 0 0 0 4',
+// '0 0 0 0 0',
+// '0 0 0 0 0',
+// '4 4 3 1',
+// '2 3 1 4',
+// '4 1 2 3',
+// '3 4 2 1',
+// '4 3 1 2',
+// '2 4 3 1',
+// '2 1 3 4',
+// '3 4 1 2',
+// '4 1 2 3',
+// '4 3 2 1',
+// '1 4 3 2',
+// '1 3 2 4',
+// '3 2 1 4',
+// '3 4 1 2',
+// '3 2 4 1',
+// '1 4 2 3',
+// '1 4 2 3'
+// ]
+// const input = [
+//     '5 4 10',
+//     '0 0 0 0 3',
+//     '0 0 0 0 0',
+//     '1 2 0 0 0',
+//     '0 0 0 0 4',
+//     '0 0 0 0 0',
+//     '4 4 3 1',
+//     '2 3 1 4',
+//     '4 1 2 3',
+//     '3 4 2 1',
+//     '4 3 1 2',
+//     '2 4 3 1',
+//     '2 1 3 4',
+//     '3 4 1 2',
+//     '4 1 2 3',
+//     '4 3 2 1',
+//     '1 4 3 2',
+//     '1 3 2 4',
+//     '3 2 1 4',
+//     '3 4 1 2',
+//     '3 2 4 1',
+//     '1 4 2 3',
+//     '1 4 2 3',
+//     ]
 const fs =require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class Shark{
@@ -16,7 +107,7 @@ class Smell{
 }
 function move(){
     const {y,x,number,dir,N} = this;
-    const direction = this.priorDir[dir];
+    const direction = this.priorDir[(number-1)*4 + dir];
     for(let i=0; i<direction.length; i++){
         const [dy,dx] = [this.dy[direction[i]],this.dx[direction[i]]];
         const [ny,nx] = [y+dy,x+dx];
@@ -38,7 +129,9 @@ const setSmellMap = (smellMap,map,k) =>{
             const smell = smellMap[y][x];
             const shark = map[y][x];
             if(shark) smellMap[y][x] = new Smell(shark.number,k);
+            else{
             if(smell && smell.k === 0) smellMap[y][x] = null;
+            }
         }
     }
 
@@ -80,7 +173,9 @@ const solution = input =>{
             }
         }
         times++;
-        
+        const sharks = map.flat().filter(el => el);
+        if(sharks.length === 1 && sharks[0].number === 1) return console.log(times);
     }
     console.log(-1);
 }
+solution(input);
