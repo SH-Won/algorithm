@@ -42,8 +42,8 @@
     // '2 1',
     // '1 1',
     // ]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const [dy,dx] = [[0,-1,-1,-1,0,1,1,1],[-1,-1,0,1,1,1,0,-1]];
 const water_bug = (clouds,map,cloudMap) =>{
