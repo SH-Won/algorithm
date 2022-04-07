@@ -5,8 +5,8 @@
 // const input =['1 1','9']
 // const input = ['3 7','2H9HH11','HHHHH11','9HHHH11']
 // const input =['4 4','3HH2','H1HH','H2H1','2219'] //ans 8
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = input =>{
     const [N,M] = input[0].split(' ').map(Number);
