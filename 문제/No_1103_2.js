@@ -7,31 +7,56 @@
 // const input =['4 4','3HH2','H1HH','H2H1','2219'] //ans 8
 const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
-
 const solution = input =>{
     const [N,M] = input[0].split(' ').map(Number);
     const map = Array.from({length:N},(_,i)=>input[i+1].split(''));
     const visited = Array.from({length:N},()=>Array(M).fill(false));
-    const dp = Array.from({length:N},()=>Array(M).fill(-1));
+    const dp = Array.from({length:N},()=>Array(M).fill(0));
     const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
-    let maxCount = 0;
-    const moveCoin = (y,x,count) =>{
+    const moveCoin = (y,x) =>{
         if(visited[y][x]) process.exit(console.log(-1));
-        if(dp[y][x] >= count) return;
+        if(dp[y][x]) return dp[y][x];
         visited[y][x] = true;
-        dp[y][x] = count;
         const number = +map[y][x];
         for(let i=0; i<4; i++){
             const [ny,nx] = [y+dy[i]*number , x+dx[i]*number];
-            if(ny < 0 || nx < 0 || ny >= N || nx >= M || map[ny][nx] === 'H'){
-                maxCount = Math.max(count+1,maxCount);
-                continue;
-            }
-            moveCoin(ny,nx,count+1);
+            if(ny < 0 || nx < 0 || ny >= N || nx >= M || map[ny][nx] === 'H') continue;
+            dp[y][x] = Math.max(dp[y][x],moveCoin(ny,nx));
         }
+        dp[y][x]++;
         visited[y][x] = false;
+        return dp[y][x];
     }
-    moveCoin(0,0,0);
-    console.log(maxCount);
+    console.log(moveCoin(0,0))
 }
 solution(input);
+
+
+
+// const solution = input =>{
+//     const [N,M] = input[0].split(' ').map(Number);
+//     const map = Array.from({length:N},(_,i)=>input[i+1].split(''));
+//     const visited = Array.from({length:N},()=>Array(M).fill(false));
+//     const dp = Array.from({length:N},()=>Array(M).fill(-1));
+//     const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
+//     let maxCount = 0;
+//     const moveCoin = (y,x,count) =>{
+//         if(visited[y][x]) process.exit(console.log(-1));
+//         if(dp[y][x] >= count) return;
+//         visited[y][x] = true;
+//         dp[y][x] = count;
+//         const number = +map[y][x];
+//         for(let i=0; i<4; i++){
+//             const [ny,nx] = [y+dy[i]*number , x+dx[i]*number];
+//             if(ny < 0 || nx < 0 || ny >= N || nx >= M || map[ny][nx] === 'H'){
+//                 maxCount = Math.max(count+1,maxCount);
+//                 continue;
+//             }
+//             moveCoin(ny,nx,count+1);
+//         }
+//         visited[y][x] = false;
+//     }
+//     moveCoin(0,0,0);
+//     console.log(maxCount);
+// }
+// solution(input);
