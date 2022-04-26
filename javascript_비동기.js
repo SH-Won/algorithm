@@ -86,15 +86,15 @@ const a = 1, b = 2 , c= 3;
 // aysnc await
 // setTimeout 은 프로미스를 반환하지 않기 때문에 코드를 조금 변경
 
-const fetchData = (timeDelay) => new Promise((res)=>{
+const fetchData = (timeDelay) => new Promise((res,rej)=>{
     setTimeout(()=>{
         res([1,2,3,4]);
-    },timeDelay)
-}).then(result => result);
+    },timeDelay);
+})
 
 const getData = async () =>{
     console.log(1);
-    const data = await fetchData(2000);
+    const data =  await fetchData(2000);
     console.log(data);
     console.log(2);
 }
