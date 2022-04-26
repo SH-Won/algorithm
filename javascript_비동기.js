@@ -93,14 +93,36 @@ const fetchData = (timeDelay) => new Promise((res,rej)=>{
 })
 
 const getData = async () =>{
-    console.log(1);
+    console.log(3);
     const data =  await fetchData(2000);
     console.log(data);
-    console.log(2);
+    console.log(4);
 }
 getData();
+
 // async await 를 이용하여 비동기 함수를 동기적으로 수행시킬 수 있다.
 
+// 프로미스화
+
+const promisify = f =>{
+    return (...arg) =>{
+        return new Promise((res,rej) =>{
+            const callback = (err,result) =>{
+                if(!err) res(result);
+                else rej('error');
+            }
+            arg.push(callback);
+            f.call(this,...arg);
+        });
+    };
+};
+
+const test = (number,callback) =>{
+    if(number) callback(null,number);
+    else callback(true);
+}
+const promiseTest = promisify(test);
+promiseTest('1').then(result => console.log(result));
 
 
 
