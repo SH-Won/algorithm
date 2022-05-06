@@ -29,6 +29,20 @@ printNumber(array);
 
 // 2. O - Open/Closed Principle 개방/폐쇄 원칙
 // 확장에는 열려있으나, 변경에는 닫혀있어야한다.
-// ex) 컴퓨터에는 수많은 부품이 들어간다.
+// 새로운 기능의 추가가 일어났을때, 기존코드의 수정없이 추가 되어야함.
+// 내부의 코드를 수정 할땐, 외부의 코드에 변화가 없어야한다.
+// 어떤 함수에서에 if 또는 다른 조건문으로 분기처리가 많다면, 개방 폐쇄의 원칙을 지키지 않고 있을 확률이 높다.
+const getResult = (array,func) =>{
+    const result = [];
+    for(let i=0; i<array.length; i++){
+        if(func(array[i])) result.push(array[i]);
+    }
+    return result;
+}
+const newArr = getResult(array, el => el); 
+const filterArr = getResult(array, el => el % 2 === 0);
+console.log(newArr,filterArr);
+
+// 3. L - liskov subsititution principle  리스코프 치환 원칙
 
 
