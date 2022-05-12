@@ -51,3 +51,4 @@ console.log(parent.__proto__.__proto__ === Object.prototype) // true
 console.log(parent.constructor.__proto__  === Function.prototype) // true
 
 
+// 객체 지향 프로그래밍을 해보자.
