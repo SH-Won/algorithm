@@ -14,5 +14,4 @@ const solution = (n,t,m,timetable) =>{
         }
         else timetable.splice(0,crewCount);
     }
-
 }

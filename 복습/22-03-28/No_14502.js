@@ -15,19 +15,19 @@
 // '1 1 1 0 0 2',
 // '0 0 0 0 0 2',
 // ]
-const input =[
-    '8 8',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'2 0 0 0 0 0 0 2',
-'0 0 0 0 0 0 0 0',
-'0 0 0 0 0 0 0 0',
-'0 0 0 0 0 0 0 0',
-]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input =[
+//     '8 8',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '2 0 0 0 0 0 0 2',
+// '0 0 0 0 0 0 0 0',
+// '0 0 0 0 0 0 0 0',
+// '0 0 0 0 0 0 0 0',
+// ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getSafety = (map) =>{
     return map.reduce((acc,row) => acc+=row.reduce((acc,el) => acc+= (!el ? 1 : 0),0),0);

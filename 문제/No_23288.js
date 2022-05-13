@@ -26,15 +26,15 @@
 // '5 6 1 3 2',
 // '5 5 6 5 5'
 // ]
-const input = [
-    '4 5 1000',
-    '4 1 2 3 3',
-    '6 1 1 3 3',
-    '5 6 1 3 2',
-    '5 5 6 5 5'
-    ]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '4 5 1000',
+//     '4 1 2 3 3',
+//     '6 1 1 3 3',
+//     '5 6 1 3 2',
+//     '5 5 6 5 5'
+//     ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[0,1,0,-1],[1,0,-1,0]] // 동 남 서 북
 const getScore = (y,x,map,scoreMap) =>{
     if(scoreMap[y][x]) return scoreMap[y][x];

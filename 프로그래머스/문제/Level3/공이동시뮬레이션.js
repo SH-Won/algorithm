@@ -25,10 +25,10 @@ const solution = (n,m,x,y,queries) =>{
         }
         if(startX >=n || endX < 0 || startY >= m || endY < 0) return 0;
     }
-    return (endX - startX + 1) * (endY - startY + 1);
+    return BigInt(endX - startX + 1) * BigInt(endY - startY + 1);
 }
 // console.log(solution(2,2,0,0,[[2,1],[0,1],[1,1],[0,1],[2,1]]))
 // console.log(solution(2,5,0,1,[[3,1],[2,2],[1,1],[2,3],[0,1],[2,1]]))
 console.log(solution(2,2,0,1,[[1,1]]))
 console.log(solution(10e9,10e9,0,10e9-1,[[1,10e9]]))
-console.log(Math.pow(2,53)-1 > 10e9* 10e9)
+

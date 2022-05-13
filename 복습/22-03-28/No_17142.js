@@ -4,11 +4,11 @@
 // const input =['7 5','2 0 2 0 1 1 0','0 0 1 0 1 2 0','0 1 1 2 1 0 0','2 1 0 0 0 0 2','0 0 0 2 0 1 1','0 1 0 0 0 0 0','2 1 0 0 2 0 2']
 // const input =['7 3','2 0 2 0 1 1 0','0 0 1 0 1 0 0','0 1 1 1 1 0 0','2 1 0 0 0 0 2','1 0 0 0 0 1 1','0 1 0 0 0 0 0','2 1 0 0 2 0 2']
 // const input =['7 2','2 0 2 0 1 1 0','0 0 1 0 1 0 0','0 1 1 1 1 0 0','2 1 0 0 0 0 2','1 0 0 0 0 1 1','0 1 0 0 0 0 0','2 1 0 0 2 0 2']
-const input =['5 1','2 2 2 1 1','2 1 1 1 1','2 1 1 1 1','2 1 1 1 1','2 2 2 1 1']
+// const input =['5 1','2 2 2 1 1','2 1 1 1 1','2 1 1 1 1','2 1 1 1 1','2 2 2 1 1']
 
 
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const isSafe = (map) =>{
     return map.flat().some(el => !el);
 }

@@ -11,16 +11,16 @@
 //     '0 0 0 0 1 1 1 0 0 0',
 //     '0 0 0 0 0 0 0 0 0 0'
 //     ]
-    const input = [
-    '5',
-    '1 0 0 0 1',
-    '0 0 0 0 0',
-    '0 0 0 0 0',
-    '0 0 0 0 0',
-    '1 1 0 0 1',
-    ]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+    // const input = [
+    // '5',
+    // '1 0 0 0 1',
+    // '0 0 0 0 0',
+    // '0 0 0 0 0',
+    // '0 0 0 0 0',
+    // '1 1 0 0 1',
+    // ]
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
 const getMinLength = (island,dist) =>{
     const N = island.length;

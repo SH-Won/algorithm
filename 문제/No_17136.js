@@ -131,8 +131,8 @@
 //     '0 0 0 0 0 0 0 0 0 0',
 //     '0 0 0 0 0 0 0 0 0 0'
 // ] //ans 6
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(row => row.split(' ').map(Number));
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(row => row.split(' ').map(Number));
 
 const papering = (i,j,paper,size,map) =>{
     for(let y=i; y<i+size; y++){
@@ -148,7 +148,6 @@ const check = (i,j,size,map) =>{
     return true;
 }
 const solution = map =>{
-    map = map.map(row => row.split(' ').map(Number));
     const paper = [null,5,5,5,5,5];
     let min = Infinity;
     const attachPaper = (y,x,paperCount) =>{

@@ -62,8 +62,8 @@
 // '2 1 2',
 // '3 0 4',
 // ] //ans 42
-// const fs =require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const addNumber = (circles) =>{
     const {sum,count} = circles.reduce((acc,circle)=>{

@@ -70,8 +70,8 @@
 //     '0 7 0 5 4 3 2 1',
 //     '1 2 3 1 2 3 1 2 3 1'
 //     ]
-// const fs =require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 const [dy,dx] = [[1,-1,0,0],[0,0,1,-1]];
 const fireStorm = (L,map) =>{
     const length = Math.pow(2,L);

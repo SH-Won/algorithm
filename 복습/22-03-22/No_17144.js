@@ -69,8 +69,8 @@
 // '0 0 5 0 15 0 0 0',
 // '0 0 40 0 0 0 20 0'
 // ]
-// const fs =require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const spread = (map,robot) =>{
     const newMap = Array.from({length:map.length},()=>Array(map[0].length).fill(0));

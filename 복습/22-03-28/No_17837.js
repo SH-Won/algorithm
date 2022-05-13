@@ -42,27 +42,27 @@
 // '1 3 1',
 // '3 3 3'
 // ]
-const input = [
-    '6 10',
-    '0 1 2 0 1 1',
-    '1 2 0 1 1 0',
-    '2 1 0 1 1 0',
-    '1 0 1 1 0 2',
-    '2 0 1 2 0 1',
-    '0 2 1 0 2 1',
-    '1 1 1',
-    '2 2 2',
-    '3 3 4',
-    '4 4 1',
-    '5 5 3',
-    '6 6 2',
-    '1 6 3',
-    '6 1 2',
-    '2 4 3',
-    '4 2 1',
-    ]
-// const fs =require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+// const input = [
+//     '6 10',
+//     '0 1 2 0 1 1',
+//     '1 2 0 1 1 0',
+//     '2 1 0 1 1 0',
+//     '1 0 1 1 0 2',
+//     '2 0 1 2 0 1',
+//     '0 2 1 0 2 1',
+//     '1 1 1',
+//     '2 2 2',
+//     '3 3 4',
+//     '4 4 1',
+//     '5 5 3',
+//     '6 6 2',
+//     '1 6 3',
+//     '6 1 2',
+//     '2 4 3',
+//     '4 2 1',
+//     ]
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 class Horse{
     constructor(y,x,dir){
         this.y = y;

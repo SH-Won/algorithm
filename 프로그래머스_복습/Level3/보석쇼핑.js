@@ -15,4 +15,4 @@ const solution = gems =>{
 // console.log(solution(["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]))
 // console.log(solution(["AA", "AB", "AC", "AA", "AC"]))
 // console.log(solution(["XYZ", "XYZ", "XYZ"]))
-console.log(solution(["ZZZ", "YYY", "NNNN", "YYY", "BBB"]))
+// console.log(solution(["ZZZ", "YYY", "NNNN", "YYY", "BBB"]))

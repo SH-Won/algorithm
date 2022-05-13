@@ -13,9 +13,8 @@ const solution = (N,number) =>{
                 }
             }
         }
-        console.log(setArr[i])
         if(setArr[i].has(number)) return i;
     }
-    return -1 ;
+    return -1;
 }
 console.log(solution(5,12))

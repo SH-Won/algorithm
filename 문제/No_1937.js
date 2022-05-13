@@ -10,8 +10,8 @@
 //     '2 2',
 //     '2 2'
 // ]
-// const fs = require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const solution = input =>{
     const N = +input[0];

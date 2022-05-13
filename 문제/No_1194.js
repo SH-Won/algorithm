@@ -18,8 +18,8 @@ const input = [
     '.#.#.#..',
     'd#f#bF.1'
     ]
-// const fs =require('fs');
-// const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+const fs =require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const getMinCount = (start,map) =>{
     const [N,M] = [map.length, map[0].length];
